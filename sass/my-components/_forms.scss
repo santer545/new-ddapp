@@ -1,0 +1,834 @@
+.form {
+    &-language,
+    &-info {
+        margin-left: -15px;
+    }
+    &-control {
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid #333;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 16px;
+        border-radius: 0;
+        color: $text-color;
+        &:focus {
+            box-shadow: none;
+            outline: none;
+            border-color: inherit;
+        }
+        &--sm {
+            height: 27px;
+            padding-left: 0;       
+        }
+        &--calendar {
+          display: inline-block;
+          vertical-align: middle;
+          width: 104px;
+          height: 38px;
+          line-height: 38;
+          padding: 0 5px;
+          border: 1px solid #f1f1f1;
+          margin-right: 25px; 
+          text-align: center;
+        }
+        &--lang {
+            padding-right: 35px;
+        }
+        &--search {
+            padding: 7px 0 7px 40px;
+            background-color: #fafafa;
+        }
+        &--inline {
+            display: inline-block;
+            vertical-align: middle;
+            width: auto;
+        }
+        &--small {
+            width: 140px;
+            border-bottom: 1px solid $gray-light;
+        }
+        &--table {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100px;
+        }
+        &--size {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &--wr {
+            position: relative;
+            margin-bottom: 10px;
+        }
+        &--icon {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            svg {
+                border: 1px solid #cacbcd;
+                border-radius: 50%;
+            }
+        }
+        &--inverse {
+            color: $second-color;
+        }
+        &[disabled="disabled"] {
+            border: none;
+            background-color: #fff;
+            cursor: default;
+        }
+    }
+    &-group {
+        margin-bottom: 20px;
+        &--modal {
+            margin-bottom: 14px;
+        }
+        &--sm {
+            margin-bottom: 15px;    
+        }
+    }
+    &-divider {
+        height: 1px;
+        border-bottom: 1px solid #eaeaea;
+        padding: 20px 0 0;
+        margin: 0 0 20px -50px;
+    }
+    &__list {
+        padding-right: 80px;
+    }
+    &-label {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        font-weight: 300;
+        color: $gray-light;
+        width: 10%;
+        margin-bottom: 0;
+        @media (max-width: 1600px) {
+            width: 15%;
+        }
+        &--black {
+            color: $text-color;
+            margin-right: 30px;
+        }
+        &--auto {
+            margin-right: 95px;
+            width: auto;
+        }
+        &--full {
+            width: auto;
+        }
+        &--big {
+            font-size: 24px;
+        }
+        &--large {
+            width: auto;
+            font-weight: 400;
+        }
+    }
+}
+
+.calendar-label {
+  font-size: 16px;
+  color: #9f9f9f;
+  margin-right: 17px; 
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.calendar-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 11px; 
+  width: 20px;  
+  height: 20px;
+  cursor: pointer;
+}
+
+.form-horizontal {
+    &--inline {
+        display: none;
+        float: left;
+        .control-label {
+            vertical-align: middle;
+            padding-top: 0;
+            margin-right: 30px;
+        }
+    }
+    .form-group {
+        margin-left: 0;
+    }
+    .control-label {
+        padding-top: 10px;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400;
+        color: $gray-middle;
+        &--inline {
+            display: inline-block;
+            vertical-align: middle;
+            padding-top: 0;
+            margin-right: 20px;
+        }
+        &--big {
+            padding-top: 8px;
+        }
+        &--padding {
+            padding-top: 7px;
+        }
+        &--sm {
+            padding-top: 4px;   
+        }
+    }
+}
+
+.control-label {
+        padding-top: 0;
+        padding-left: 0;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 0;
+        color: $gray-middle;
+        &--big {
+            padding-top: 12px;
+        }
+    }
+
+/**
+ * Bootstrap slider
+ */
+
+.bootstrap-select {
+    margin-right: 18px;
+    .caret {
+        border: none;
+        width: 20px;
+        height: 12px;
+        background-image: url("../assets/svg/arrow-down.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .dropdown-toggle {
+        padding: 12px 8px 8px;
+        &:focus {
+            outline: none;
+            outline: 0 dotted #333!important;
+            outline: 0 auto -webkit-focus-ring-color!important;
+            outline-offset: 0;
+        }
+    }
+}
+
+.btn-group.open .dropdown-toggle {
+    float: none;
+}
+
+.dropdown-toggle {
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    border-radius: 0;
+    &[disabled="disabled"] {
+        border: none;
+        cursor: default;
+        .caret {
+            display: none;
+        }
+    }
+}
+
+.dropdown-menu {
+    >li {
+        >a {
+            padding: 6px 20px;
+            font-size: 16px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.filter-option {
+    color: $text-color;
+    font-size: 16px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+}
+
+.full__width {
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+        display: block;
+    }
+}
+.wide-select {
+    width: 215px;
+    display: inline-block;
+    vertical-align: middle;
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100%;
+        display: block;
+    }
+}
+
+.custom__option {
+    display: inline-block;
+    vertical-align: middle;
+    &_img {
+        margin-right: 10px;
+        border: 1px solid #cacbcd;
+        border-radius: 50%;
+    }
+}
+
+
+input.input__color {
+    display: none;
+}
+
+.label__file--color {
+    color: $brand-primary;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 300;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.btn-tertiary {
+  color: #555;
+  padding: 0;
+  line-height: 40px;
+  width: 300px;
+  margin: auto;
+  display: block;
+  border: 2px solid #555;
+  &:hover,
+    &:focus {
+      color: lighten(#555, 20%);
+      border-color: lighten(#555, 20%);
+    }
+}
+
+/* input file style */
+
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  + .js-labelFile {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+    cursor: pointer;
+    .icon:before {
+      //font-awesome
+      content: "\f093";
+    }
+    &.has-file {
+      .icon:before {
+        //font-awesome
+        content: "\f00c";
+        color: #5AAC7B;
+      }
+    }
+  }
+}
+
+
+.quantity {
+  position: relative;
+  display: inline-block;    
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 36px;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;    
+  vertical-align: middle;   
+  padding: 0;
+  margin: 0;
+  padding-left: 5px;
+  padding-right: 5px;  
+  font-size: 16px;
+  color: #a7a4a4;
+  background-color: #ffffff;
+  border: solid 1px #cfcfcf;
+  text-align: center;   
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+
+
+.quantity-button {
+  display: inline-block;  
+  vertical-align: middle; 
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  color: #9f9f9f;;
+  font-size: 24px;
+  line-height: 21px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  width: 25px;
+  height: 24px;
+  border-radius: 1px;
+  background-color: #f1f1f1;
+}
+
+
+
+
+
+
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+{
+    overflow: visible !important;
+    position: relative;
+    transition: width 0.3s;
+    &:focus {
+        outline: none;
+        *, .sidebar__item {
+            outline: none;
+        }
+    }
+}
+
+.jspPane
+{
+    padding-top: 40px!important;
+    position: absolute;
+    transition: width 0.3s;
+    width: 64px !important;
+    &:focus {
+        outline: none;
+        *,.sidebar__item {
+            outline: none;
+        }
+    }
+}
+
+.jspScrollable {
+    &:focus {
+        outline: none;
+        *, .sidebar__item {
+            outline: none;
+        }
+    }
+}
+
+.jspVerticalBar
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: red;
+}
+
+.jspHorizontalBar
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background: red;
+}
+
+.jspCap
+{
+    display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+    float: left;
+}
+
+.jspTrack
+{
+    background: #3ab3df;
+    position: relative;
+}
+
+.jspDrag
+{
+    background: #3ab3df;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+    float: left;
+    height: 100%;
+}
+
+.jspArrow
+{
+    background: #50506d;
+    text-indent: -20000px;
+    display: block;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.jspArrow.jspDisabled
+{
+    cursor: default;
+    background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+    height: 0px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+    width: 5px;
+    float: left;
+    height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+    outline: none;
+}
+
+.jspCorner
+{
+    background: #eeeef4;
+    float: left;
+    height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+    margin: 0 -3px 0 0;
+}
+
+
+
+
+/*! Huebee v1.0.0
+http://huebee.buzz
+---------------------------------------------- */
+
+.huebee {
+  position: absolute;
+  z-index: 1;
+  transform: translateY(0px);
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.huebee.is-hidden {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.huebee.is-static-open {
+    & + .huebee.is-static-open {
+        display: none;
+    }
+  position: relative;
+  z-index: auto;
+}
+
+.huebee__container {
+  position: absolute;
+
+  left: 0;
+  top: 5px;
+  padding: 10px;
+  background: #EEE;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.3);
+}
+
+
+
+.huebee.is-static-open .huebee__container {
+  position: relative;
+  display: inline-block;
+  left: auto;
+  top: auto;
+  box-shadow: none;
+}
+
+.huebee__canvas {
+  display: block;
+  cursor: pointer;
+
+}
+
+.huebee__cursor {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  box-sizing: content-box;
+  border: 2px solid white;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.huebee__cursor.is-hidden { opacity: 0; }
+
+.huebee__close-button {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: -9px;
+  right: -9px;
+  border-radius: 12px;
+  background: #222;
+}
+
+.huebee__close-button__x {
+  stroke: white;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.huebee__close-button:hover {
+  background: white;
+  cursor: pointer;
+}
+
+.huebee__close-button:hover .huebee__close-button__x {
+  stroke: #222;
+}
+
+
+
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+
+
+
+
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    
+    span {
+      font-size: 16px;
+      font-weight: 400; 
+      color: #9f9f9f;
+    }
+    span,
+    svg,
+    figure {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+
+#list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+.comments-new {
+  #list {
+    padding: 10px 0 0 75px; 
+  }
+}
+
+.img-delete {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  line-height: 35px;
+  text-align: center;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.6);
+  svg {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.ui-datepicker {
+  background-color: #fff;
+  border: 1px solid #66AFE9;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(102,175,233,.6);
+  display: none;
+  margin-top: 4px;
+  padding: 10px;
+  width: 240px;
+}
+.ui-datepicker a,
+.ui-datepicker a:hover {
+  text-decoration: none;
+}
+.ui-datepicker a:hover,
+.ui-datepicker td:hover a {
+  color: #2A6496;
+  -webkit-transition: color 0.1s ease-in-out;
+     -moz-transition: color 0.1s ease-in-out;
+       -o-transition: color 0.1s ease-in-out;
+          transition: color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-header {
+  margin-bottom: 4px;
+  text-align: center;
+}
+.ui-datepicker .ui-datepicker-title {
+  font-weight: 700;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  cursor: default;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  height: 20px;
+  line-height: 1;
+  margin-top: 2px;
+  width: 30px;
+}
+.ui-datepicker .ui-datepicker-prev {
+  float: left;
+  text-align: left;
+}
+.ui-datepicker .ui-datepicker-next {
+  float: right;
+  text-align: right;
+}
+.ui-datepicker .ui-datepicker-prev:before {
+  content: "\e079";
+}
+.ui-datepicker .ui-datepicker-next:before {
+  content: "\e080";
+}
+.ui-datepicker .ui-icon {
+  display: none;
+}
+.ui-datepicker .ui-datepicker-calendar {
+  table-layout: fixed;
+  width: 100%;
+}
+.ui-datepicker .ui-datepicker-calendar th,
+.ui-datepicker .ui-datepicker-calendar td {
+  text-align: center;
+  padding: 4px 0;
+}
+.ui-datepicker .ui-datepicker-calendar td {
+  border-radius: 4px;
+  -webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+     -moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+       -o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+          transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-calendar td:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-calendar td a {
+  text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-current-day {
+  background-color: #4289cc;
+}
+.ui-datepicker .ui-datepicker-current-day a {
+  color: #fff
+}
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-unselectable:hover {
+  background-color: #fff;
+  cursor: default;
+}
