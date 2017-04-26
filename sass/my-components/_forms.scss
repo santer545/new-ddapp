@@ -140,9 +140,7 @@
 .calendar-icon {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 11px; 
-  width: 20px;  
-  height: 20px;
+  margin-right: 11px;
   cursor: pointer;
 }
 
@@ -720,19 +718,25 @@ input::-webkit-contacts-auto-fill-button {
   position: absolute;
   width: 24px;
   height: 24px;
-  line-height: 35px;
+  line-height: 23px;
   text-align: center;
   top: 0;
   right: 0;
   cursor: pointer;
   background-color: rgba(0,0,0,0.6);
-  svg {
+  svg,
+  img {
     display: inline-block;
     width: 20px;
     height: 20px;
   }
 }
 
+.comments-img-list {
+  .img-delete {
+    line-height: 24px;  
+  }
+}
 
 
 

@@ -114,6 +114,17 @@ textarea {
             margin: 0;
         }
     }
+    &-double {
+        &:hover {
+            background-color: #fff;
+        }
+        .save-btn {
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: #f1f1f1;
+            }
+        }
+    }
 }
 
 .accept-btn {
@@ -705,13 +716,15 @@ div.ui-selected {
                 margin-left: -19px;
             }
         }
-        &:last-child {
-            .steps__circle--task {
-                line-height: 50px;
-            }
-        }
         &--task {
             width: 25%;
+            img {
+                width: 40px;    
+                height: 40px;   
+            }
+            .circle__wr {
+                top: 21px;
+            }
         }
         &--inverse {
             color: #f1f1f1;
@@ -833,6 +846,8 @@ div.ui-selected {
         }
         &--task {
             line-height: 65px;
+            width: 72px;    
+            height: 72px;   
             .icon,
             svg {
                 width: 30px;
@@ -2110,6 +2125,7 @@ div.ui-selected {
     border-top: 1px solid #f1f1f1;
     padding-top: 25px;
     padding-left: 30px;
+    margin-top: 25px;
 }
 
 // comments
