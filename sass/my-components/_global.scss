@@ -46,6 +46,7 @@ textarea {
     height: 95px;
     resize: none;
     padding: 10px;
+    border: 1px solid #cfcfcf;
     &[disabled="disabled"] {
         border: none;
         background-color: #fff;
@@ -233,6 +234,7 @@ div.ui-selected {
 
 .personal {
     position: relative;
+    min-height: 500px;
     &__functions {
         position: absolute;
         right: 20px;
@@ -1975,6 +1977,9 @@ div.ui-selected {
     width: 40%; 
 }
 
+
+
+
 .table>tbody>tr>td,
 .table>tbody>tr>th,
 .table>tfoot>tr>td,
@@ -1986,6 +1991,11 @@ div.ui-selected {
     color: #222;
     padding-top: 12px;  
     padding-bottom: 12px;   
+}
+
+.table>tbody>tr>th {
+    font-size: 16px;    
+    color: #9f9f9f;
 }
 
 .table>tbody>tr>td.td-name,

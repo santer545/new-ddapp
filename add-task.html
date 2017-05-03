@@ -6,7 +6,8 @@
     <title>Редактирование маршрута</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script>
     (function(e, t, n) {
         var r = e.querySelectorAll("html")[0];
@@ -433,11 +434,11 @@
                                             <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Прикрепить фото</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9">
                                                 <div class="box">
-                                                    <input type="file" name="file" id="file" class="inputfile inputfile-4" data-multiple-caption="Прикреплено {count} фото" multiple />
+                                                    <input accept="image/*" type="file" name="file" id="file" class="inputfile inputfile-4" data-multiple-caption="Прикреплено {count} фото" multiple />
                                                     <label for="file-1">
                                                         <figure>
                                                             <img src="assets/png/photo-blue-copy.png" alt="">
-                                                        </figure> <span></span></label>
+                                                        </figure> <span class="count-img"></span></label>
                                                     <ul id="list"></ul>
                                                 </div>
                                             </div>
@@ -470,8 +471,7 @@
                                             <div class="col-md-9 col-sm-9 col-xs-9 full__width">
                                                 <select name="route" id="route" class="selectpicker">
                                                     <option value="">Шевченко Г. Д.</option>
-                                                    <option value="">Шевченко Г. Д.</option>
-                                                    <option value="">Шевченко Г. Д.</option>
+                                                    <option value="">Иванов И. И.</option>
                                                 </select>
                                             </div>
                                         </div>

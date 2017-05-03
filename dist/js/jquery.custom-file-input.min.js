@@ -1,6 +1,6 @@
 /*
-	By Osvaldas Valutis, www.osvaldas.info
-	Available for use under the MIT License
+    By Osvaldas Valutis, www.osvaldas.info
+    Available for use under the MIT License
 */
 
 'use strict';
@@ -16,9 +16,9 @@
             var fileName = '';
 
             if (this.files && this.files.length > 1) {
-            	console.log(this);
+                console.log(this);
                 fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
-                
+
             } else if (e.target.value)
                 fileName = e.target.value.split('\\').pop();
             if (fileName)
@@ -26,6 +26,19 @@
             else
                 $label.html(labelVal);
         });
+
+        function removeImg() {
+            $(document).on('click', '.img-delete', function() {
+                $(this).closest('#list li').remove();
+                var length = $('#list').find('li').length;
+                console.log(length);
+                $('.count-img').html('Прикреплено ' + length + ' фото');
+            });
+        }
+
+        // remove img 
+
+        removeImg();
 
         // Firefox bug fix
         $input

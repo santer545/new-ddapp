@@ -176,9 +176,7 @@ $(document).ready(function() {
     initDateTimePicker();
 
 
-    // remove img 
-
-    removeImg();
+    
 
 
 
@@ -948,8 +946,4 @@ function handleFileSelect(evt) {
 
 document.getElementById('file').addEventListener('change', handleFileSelect, false);
 
-function removeImg() {
-    $(document).on('click', '.img-delete', function() {
-        $(this).closest('#list li').remove();
-    });
-}
+
