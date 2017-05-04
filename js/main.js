@@ -49,6 +49,16 @@ $(document).ready(function() {
     });
 
 
+    $(".fancy").fancybox({
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+
+
+
     // Вызов кастомного скролла
     $('.scroll-pane').jScrollPane();
 
@@ -176,7 +186,7 @@ $(document).ready(function() {
     initDateTimePicker();
 
 
-    
+
 
 
 
@@ -200,7 +210,7 @@ $(document).ready(function() {
 
 
 
-    $('#comment').click(function () {
+    $('#comment').click(function() {
         $('.textarea-tool').addClass('active');
     });
 
@@ -520,6 +530,10 @@ function initAddBrandline() {
             }
         });
         initSameHeight();
+
+
+
+
     });
 }
 
@@ -924,18 +938,24 @@ function handleFileSelect(evt) {
         var reader = new FileReader();
 
         // Closure to capture the file information.
+
         reader.onload = (function(theFile) {
             return function(e) {
+
+
                 // Render thumbnail.
                 var span = document.createElement('li');
+
                 span.innerHTML = [
-                    '<div class="img-delete"><img src="assets/png/cancel.png"></div><img style="width: 113px;" src="',
+                    '<div class="img-delete"><img src="assets/png/cancel.png"></div><a data-fancybox="images" data-type="image" data-width="1000" href="', e.target.result, '"><img style="width: 113px;" src="',
                     e.target.result,
                     '" title="', escape(theFile.name),
-                    '"/>'
+                    '"/></a>'
                 ].join('');
 
                 document.getElementById('list').insertBefore(span, null);
+
+
             };
         })(f);
 
@@ -945,5 +965,3 @@ function handleFileSelect(evt) {
 }
 
 document.getElementById('file').addEventListener('change', handleFileSelect, false);
-
-

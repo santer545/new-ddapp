@@ -9,6 +9,7 @@
 (function($, window, document, undefined) {
     $('.inputfile').each(function() {
         var $input = $(this),
+            input = $input,
             $label = $input.next('label'),
             labelVal = $label.html();
 
@@ -16,29 +17,52 @@
             var fileName = '';
 
             if (this.files && this.files.length > 1) {
-                console.log(this);
+               
                 fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
-
-            } else if (e.target.value)
+                
+            } else if (e.target.value) {
                 fileName = e.target.value.split('\\').pop();
-            if (fileName)
+            }
+            if (fileName) {
+                
                 $label.find('span').html(fileName);
-            else
+            } else
                 $label.html(labelVal);
         });
 
         function removeImg() {
             $(document).on('click', '.img-delete', function() {
+
                 $(this).closest('#list li').remove();
+
+                /*$(this).closest('#list li').remove();*/
                 var length = $('#list').find('li').length;
-                console.log(length);
+
+                // Сохраняем значения полей форм
+
+                var name = $('#name').val();
+                var description = $('#description').val();
+                var DateFrom = $('#DateFrom').val();
+                var DateTill = $('#DateTill').val();
+                var route = $('#route').val();
+
+                // Очищаем значения input file для возможности повторного выбора файла, который был удален
+                $('#form')[0].reset();
+
+                // Перезаписываем значения полей
+                
+                $('#name').val(name);
+                $('#description').val(description);
+                $('#DateFrom').val(DateFrom);
+                $('#DateTill').val(DateTill);
+                $('#route').val(route);
+
                 $('.count-img').html('Прикреплено ' + length + ' фото');
             });
         }
 
-        // remove img 
-
         removeImg();
+
 
         // Firefox bug fix
         $input

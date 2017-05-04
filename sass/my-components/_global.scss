@@ -61,7 +61,7 @@ textarea {
     position: relative;
     padding-left: 64px;
     width: 100%;
-    min-height: 100%;
+    min-height: calc(100% - 1px);
 }
 
 .wrapper {
@@ -234,7 +234,7 @@ div.ui-selected {
 
 .personal {
     position: relative;
-    min-height: 500px;
+    min-height: 600px;
     &__functions {
         position: absolute;
         right: 20px;

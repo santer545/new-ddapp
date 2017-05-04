@@ -434,9 +434,9 @@
                                             <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Прикрепленные фото</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9">
                                                 <ul class="photo-list">
-                                                    <li class="photo-item"><img src="assets/images/comment-1.jpg" alt=""></li>
-                                                    <li class="photo-item"><img src="assets/images/comment-1.jpg" alt=""></li>
-                                                    <li class="photo-item"><img src="assets/images/comment-1.jpg" alt=""></li>
+                                                    <li class="photo-item"><a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a></li>
+                                                    <li class="photo-item"><a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a></li>
+                                                    <li class="photo-item"><a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -571,19 +571,21 @@
                                 <div class="textarea-tool">
                                     <div class="textarea-item">
                                         <div class="box">
-                                            <input accept=".png, .jpg, .jpeg" type="file" name="file" id="file" class="inputfile inputfile-4" data-multiple-caption="Прикреплено {count} фото" multiple />
-                                            <label for="file-1">
-                                                <figure>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
-                                                        <g fill="none" fill-rule="evenodd">
-                                                            <path d="M0 0h30v30H0z" />
-                                                            <g fill="#9F9F9F" transform="translate(0 1)">
-                                                                <ellipse cx="15" cy="15" rx="4.706" ry="4.706" />
-                                                                <path d="M10.588.294l-2.69 2.941H3.234a2.95 2.95 0 0 0-2.94 2.941v17.648a2.95 2.95 0 0 0 2.94 2.94h23.53a2.95 2.95 0 0 0 2.94-2.94V6.176a2.95 2.95 0 0 0-2.94-2.94h-4.662L19.412.293h-8.824zM15 22.353A7.356 7.356 0 0 1 7.647 15 7.356 7.356 0 0 1 15 7.647 7.356 7.356 0 0 1 22.353 15 7.356 7.356 0 0 1 15 22.353z" />
+                                            <form action="" id="form">
+                                                <input accept=".png, .jpg, .jpeg" type="file" name="file" id="file" class="inputfile inputfile-4" data-multiple-caption="Прикреплено {count} фото" multiple />
+                                                <label for="file-1">
+                                                    <figure>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                                            <g fill="none" fill-rule="evenodd">
+                                                                <path d="M0 0h30v30H0z" />
+                                                                <g fill="#9F9F9F" transform="translate(0 1)">
+                                                                    <ellipse cx="15" cy="15" rx="4.706" ry="4.706" />
+                                                                    <path d="M10.588.294l-2.69 2.941H3.234a2.95 2.95 0 0 0-2.94 2.941v17.648a2.95 2.95 0 0 0 2.94 2.94h23.53a2.95 2.95 0 0 0 2.94-2.94V6.176a2.95 2.95 0 0 0-2.94-2.94h-4.662L19.412.293h-8.824zM15 22.353A7.356 7.356 0 0 1 7.647 15 7.356 7.356 0 0 1 15 7.647 7.356 7.356 0 0 1 22.353 15 7.356 7.356 0 0 1 15 22.353z" />
+                                                                </g>
                                                             </g>
-                                                        </g>
-                                                    </svg>
-                                                </figure></label>
+                                                        </svg>
+                                                    </figure></label>
+                                            </form>
                                         </div>
                                     </div>
                                     <div class="textarea-item">
@@ -616,9 +618,9 @@
                                 <div class="comments-date">03.04.2017 16:38</div>
                                 <div class="comments-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, at.</div>
                                 <div class="comments-img">
-                                    <img src="assets/images/comment-1.jpg" alt="">
-                                    <img src="assets/images/comment-1.jpg" alt="">
-                                    <img src="assets/images/comment-1.jpg" alt="">
+                                    <a href="assets/images/comment-1.jpg" data-fancybox="images-1"><img src="assets/images/comment-1.jpg" alt=""></a>
+                                    <a href="assets/images/comment-1.jpg" data-fancybox="images-1"><img src="assets/images/comment-1.jpg" alt=""></a>
+                                    <a href="assets/images/comment-1.jpg" data-fancybox="images-1"><img src="assets/images/comment-1.jpg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -651,6 +653,7 @@
     <script src="js/jquery.dotdotdot.min.js"></script>
     <script src="js/jquery.sameheight.js"></script>
     <script src="js/jquery.custom-file-input.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

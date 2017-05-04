@@ -412,12 +412,12 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-9">
-                                <form action="" class="form-horizontal form-horizontal--sm">
+                                <form id="form" action="" class="form-horizontal form-horizontal--sm">
                                     <div class="form-group form-group--sm">
                                         <div class="row">
                                             <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Название</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9">
-                                                <input type="text" class="form-control form-control--sm" name="codtt" id="codtt">
+                                                <input type="text" class="form-control form-control--sm" name="codtt" id="name">
                                             </div>
                                         </div>
                                     </div>
@@ -425,7 +425,7 @@
                                         <div class="row">
                                             <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Описание</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9">
-                                                <textarea type="text" name="codtt" id="codtt"></textarea>
+                                                <textarea type="text" name="codtt" id="description"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -434,7 +434,7 @@
                                             <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Прикрепить фото</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9">
                                                 <div class="box">
-                                                    <input accept="image/*" type="file" name="file" id="file" class="inputfile inputfile-4" data-multiple-caption="Прикреплено {count} фото" multiple />
+                                                    <input value="test" accept="image/*" type="file" name="file" id="file" class="inputfile inputfile-4" data-multiple-caption="Прикреплено {count} фото" multiple />
                                                     <label for="file-1">
                                                         <figure>
                                                             <img src="assets/png/photo-blue-copy.png" alt="">
@@ -446,7 +446,7 @@
                                     </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
-                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Срок выполнения</label>
+                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--md">Срок выполнения</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9">
                                                 <div class="right-pnl">
                                                     <label class="control-label control-label--inline">с</label>
@@ -467,7 +467,7 @@
                                     </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
-                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Маршрут</label>
+                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--md">Маршрут</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9 full__width">
                                                 <select name="route" id="route" class="selectpicker">
                                                     <option value="">Шевченко Г. Д.</option>
@@ -499,6 +499,8 @@
     <script src="js/jquery.dotdotdot.min.js"></script>
     <script src="js/jquery.sameheight.js"></script>
     <script src="js/jquery.custom-file-input.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+
     <script src="js/main.js"></script>
 </body>
 
