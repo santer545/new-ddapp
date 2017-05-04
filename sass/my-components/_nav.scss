@@ -359,3 +359,36 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+
+.breadcrumbs {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 20px;    
+    li {
+        margin-right: 20px;
+        display: inline-block;
+        position: relative; 
+        &:after {
+            content: '';
+            position: absolute; 
+            width: 7px;    
+            height: 7px;   
+            right: -15px;    
+            top: 8px;   
+            transform: rotate(45deg);
+            border: 1px solid #357fc2;
+            border-left: none;
+            border-bottom: none;
+        }
+        &:last-child:after {
+            display: none;  
+        }
+    }
+    a {
+        font-size: 16px;
+        color: #357fc2;
+    }
+}

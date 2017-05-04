@@ -2267,3 +2267,43 @@ div.ui-selected {
         vertical-align: middle; 
     }
 }
+
+// folder
+
+.folder {
+    &-list {
+        font-size: 0;   
+        padding-left: 30px; 
+    }
+    &-item {
+        display: inline-block;  
+        vertical-align: top;    
+        width: 20%; 
+        margin-bottom: 32px;    
+    }
+    &-name {
+        padding-top: 9px;   
+        font-size: 16px;    
+        font-weight: 500;   
+        color: #222;
+        &--create {
+            text-align: center;
+            color: #3ab3df;
+            text-transform: uppercase;  
+        }
+    }
+    &-img {
+        img {
+            width: 40px;    
+            height: 40px;   
+        }
+    }
+    &-count {
+        font-size: 12px;
+        color: #9f9f9f;
+    }
+}
+
+.files {
+    padding-top: 10px;  
+}
