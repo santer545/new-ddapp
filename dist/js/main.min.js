@@ -99,7 +99,8 @@ $(document).ready(function() {
 
     // Bootstrap select
     $('.selectpicker').selectpicker({
-        dropupAuto: false
+        dropupAuto: false,
+        noneSelectedText: 'Ничего не выбрано'
     });
 
     $('#select-default').selectpicker();
