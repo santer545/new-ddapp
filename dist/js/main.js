@@ -532,7 +532,7 @@ function initAddBrandline() {
         initSameHeight();
 
 
-
+        
 
     });
 }
