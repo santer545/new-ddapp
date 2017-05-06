@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="file" style="display: none;"></div>
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
         <symbol id="icon-arrow-blue-left" viewBox="0 0 24 11">
             <title>ic_trending_flat_black_24px copy</title>
@@ -398,38 +399,40 @@
                 <li><a href="">папка 1</a></li>
                 <li><a href="">папка 1.1</a></li>
             </ul>
-            <section class="folder">
+            <section class="folder" id="context-menu-target">
                 <p class="heading-h2">Папка 34</p>
                 <div class="folder-list">
                     <div class="folder-item text-center">
-                        <figure class="folder-img">
-                            <img src="assets/png/invalid-name@2x.png" alt="">
-                        </figure>
-                        <div class="folder-name folder-name--create">Создать папку</div>
+                        <a role="button" data-toggle="modal" data-target="#myModal2">
+                            <figure class="folder-img">
+                                <img src="assets/png/invalid-name@2x.png" alt="">
+                            </figure>
+                            <div class="folder-name folder-name--create">Создать папку</div>
+                        </a>
                     </div>
                     <div class="folder-item text-center">
-                        <figure class="folder-img">
+                        <figure class="folder-img js-folder-img">
                             <img src="assets/png/folder@2x.png" alt="">
                         </figure>
                         <div class="folder-name">Группа линеек</div>
                         <div class="folder-count">3 файла</div>
                     </div>
                     <div class="folder-item text-center">
-                        <figure class="folder-img">
+                        <figure class="folder-img js-folder-img">
                             <img src="assets/png/folder@2x.png" alt="">
                         </figure>
                         <div class="folder-name">Группа линеек</div>
                         <div class="folder-count">3 файла</div>
                     </div>
                     <div class="folder-item text-center">
-                        <figure class="folder-img">
+                        <figure class="folder-img js-folder-img">
                             <img src="assets/png/folder@2x.png" alt="">
                         </figure>
                         <div class="folder-name">Группа линеек</div>
                         <div class="folder-count">3 файла</div>
                     </div>
                     <div class="folder-item text-center">
-                        <figure class="folder-img">
+                        <figure class="folder-img js-folder-img">
                             <img src="assets/png/folder@2x.png" alt="">
                         </figure>
                         <div class="folder-name">Группа линеек</div>
@@ -440,69 +443,71 @@
                     <p class="heading-h3 heading-files">Файлы</p>
                     <div class="folder-list">
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
-                                <img src="assets/png/download@2x.png" alt="">
-                            </figure>
-                            <div class="folder-name folder-name--create">Загрузить файл</div>
+                            <a href="file.html">
+                                <figure class="folder-img">
+                                    <img src="assets/png/download@2x.png" alt="">
+                                </figure>
+                                <div class="folder-name folder-name--create">Загрузить файл</div>
+                            </a>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/pdf@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/pdf@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/pdf@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/play@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/pdf@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/pdf@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/pdf@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/pdf@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
                             <div class="folder-count">248mb</div>
                         </div>
                         <div class="folder-item text-center">
-                            <figure class="folder-img">
+                            <figure class="folder-img js-file-menu">
                                 <img src="assets/png/play@2x.png" alt="">
                             </figure>
                             <div class="folder-name">Группа линеек</div>
@@ -513,6 +518,39 @@
             </section>
         </main>
     </div>
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    Новая папка
+                </div>
+                <div class="modal-body modal-body--padding">
+                    <form action="" class="form-horizontal">
+                        <div class="form-group form-group--modal container-fluid">
+                            <div class="row">
+                                <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Название</label>
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <input type="text" class="form-control form-control--sm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group--modal container-fluid">
+                            <div class="row">
+                                <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">ID</label>
+                                <div class="col-md-9 col-sm-9 col-xs-9">
+                                    <input type="text" class="form-control form-control--sm">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="save text-center">
+                    <div class="save__wrapper save__wrapper--sm save__wrapper--modal">сохранить</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/jquery-2.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -522,7 +560,125 @@
     <script src="js/jquery.dotdotdot.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
     <script src="js/jquery.sameheight.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/ax5core.min.js"></script>
+    <script src="js/ax5menu.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+    var menu;
+    $(document.body).ready(function() {
+        menu = new ax5.ui.menu({
+            position: "absolute", // default position is "fixed"
+            icons: {
+                'arrow': '▸'
+            },
+            items: [{
+                label: "Переименовать",
+
+            }, {
+                label: "Редактировать",
+
+            }, {
+                label: "Удалить",
+            }]
+        });
+        menu.onClick = function() {
+            console.log(this);
+        };
+        $(".js-folder-img img").bind("contextmenu", function(e) {
+            menu.popup(e);
+            ax5.util.stopEvent(e);
+            // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    var menu1;
+    $(document.body).ready(function() {
+        menu1 = new ax5.ui.menu({
+            position: "absolute", // default position is "fixed"
+            onClick: function() {
+                // console.log(this);
+            },
+            icons: {
+                'arrow': ''
+            },
+            items: [{
+                label: "Создать папку",
+            }, {
+                label: "Загрузить файл",
+            }, {
+                label: "Сортировать по",
+                items: [{
+                    check: {
+                        type: 'radio',
+                        name: 'radioName',
+                        value: '1',
+                        checked: false
+                    },
+                    label: "Наименованию",
+                }, {
+                    check: {
+                        type: 'radio',
+                        name: 'radioName',
+                        value: '2',
+                        checked: true
+                    },
+                    label: "Дате загрузки"
+                }, {
+                    check: {
+                        type: 'radio',
+                        name: 'radioName',
+                        value: '3',
+                        checked: false
+                    },
+                    label: "Типу"
+                }]
+            }]
+        });
+        menu.onClick = function() {
+            console.log(this);
+        };
+        $("#context-menu-target").bind("contextmenu", function(e) {
+            menu1.popup(e);
+            ax5.util.stopEvent(e);
+            // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    var menu2;
+    $(document.body).ready(function() {
+        menu2 = new ax5.ui.menu({
+            position: "absolute", // default position is "fixed"
+            icons: {
+                'arrow': ''
+            },
+            items: [{
+                label: "Просмотр",
+            }, {
+                label: "Скачать",
+            }, {
+                label: "Переименовать",
+
+            }, {
+                label: "Редактировать",
+
+            }, {
+                label: "Удалить",
+
+            }]
+        });
+        menu.onClick = function() {
+            console.log(this);
+        };
+        $(".js-file-menu").bind("contextmenu", function(e) {
+            menu2.popup(e);
+            ax5.util.stopEvent(e);
+            // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
+        });
+    });
+    </script>
 </body>
 
 </html>

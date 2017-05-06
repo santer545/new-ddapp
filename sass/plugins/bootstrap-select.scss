@@ -217,7 +217,18 @@ select.selectpicker {
         }
 
         span.check-mark {
-          display: none;
+          /* display: none; */
+          width: 18px;
+          height: 18px;
+          position: absolute;
+          left: 15px;
+          margin-top: 15px;
+          background-image: url('../assets/png/checkbox-off.png');
+          background-repeat: no-repeat;
+          background-size: 18px 18px;
+          &:before {
+            display: none;
+          }
         }
 
         span.text {
@@ -269,8 +280,16 @@ select.selectpicker {
     &.selected a span.check-mark {
       position: absolute;
       display: inline-block;
-      right: 15px;
-      margin-top: 5px;
+      left: 15px;
+      margin-top: 15px;
+      width: 18px;
+      height: 18px;
+      background-image: url('../assets/png/checkbox-on.png');
+      background-repeat: no-repeat;
+      background-size: 18px 18px;
+      &:before {
+        display: none;
+      }
     }
 
     a span.text {
@@ -278,6 +297,19 @@ select.selectpicker {
     }
   }
 }
+
+.show-tick {
+  .dropdown-menu {
+    padding: 0;
+  }
+  .dropdown-menu > li > a {
+    padding-left: 45px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+}
+
 
 .bootstrap-select.show-menu-arrow {
   &.open > .dropdown-toggle {
