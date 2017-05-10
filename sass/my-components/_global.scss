@@ -159,6 +159,10 @@ textarea {
 .search {
     position: relative;
     margin-top: 16px;
+    &--modal {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
 }
 
 div.ui-selected {
@@ -1672,21 +1676,31 @@ div.ui-selected {
 
 
 .drop__top {
-    height: 105px;
+    
     background-color: #f1f1f1;
     @include clearfix;
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
         margin: 0;
-        width: 195px;
+        width: 150px;
         line-height: 1.42857;
         &.btn-group .dropdown-toggle .filter-option {
             text-overflow: ellipsis;
-            width: 80%;
+            
         }
         .dropdown-toggle {
+            padding-top: 0;
             background-color: #f1f1f1;
-            border-bottom: 2px solid #fff;
+            border: none;
         }
+    }
+    .bootstrap-select.btn-group .dropdown-toggle .caret {
+        top: 8px;
+        height: 15px;
+        right: 35px;
+        background-image: url('../assets/png/down.png');
+    }
+    .filter-option {
+        color: #9f9f9f;
     }
     &--first {
         padding-left: 35px;
@@ -1971,6 +1985,12 @@ div.ui-selected {
     }
 }
 
+.table-overflow {
+    max-height: 370px;
+    overflow-y: auto;
+    margin-bottom: 50px;
+}
+
 .table th {
     background-color: #f1f1f1;
     font-size: 20px;
@@ -1986,6 +2006,15 @@ div.ui-selected {
 .table>thead>tr>th.th-padding {
     padding-left: 30px;
     width: 40%; 
+}
+
+.table>tbody>tr>td.td-left,
+.table>tbody>tr>th.td-left,
+.table>tfoot>tr>td.td-left,
+.table>tfoot>tr>th.td-left,
+.table>thead>tr>td.td-left,
+.table>thead>tr>th.td-left {
+    padding-left: 15px;
 }
 
 
@@ -2033,6 +2062,9 @@ div.ui-selected {
     &--sm {
         width: 450px;   
     }
+    &--lg {
+        width: 1145px;
+    }
     .save {
         position: static;
         display: table-footer-group;
@@ -2072,6 +2104,10 @@ div.ui-selected {
     &--delete {
         padding: 20px 0;
         text-align: center;
+    }
+    &--lg {
+        padding: 0;
+        padding-top: 20px;
     }
     .wide-select {
         .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {

@@ -397,7 +397,7 @@
                 <section class="drop__area">
                     <div class="weekend">
                         <div class="weekend-top text-center">
-                            <a class="weekend-add">
+                            <a class="weekend-add" data-toggle="modal" data-target="#myModal3">
                                 <img src="assets/png/plus@2x.png" alt="">
                             </a>
                             <span class="weekend-header"><a href="" class="weekend-button"></a>неделя 1<a href="" class="weekend-button weekend-button--right"></a></span>
@@ -979,6 +979,155 @@
                     </div>
                     <div class="save text-center">
                         <div class="save__wrapper save__wrapper--modal">сохранить</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-dialog--lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body modal-body--lg">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="search search--modal">
+                                        <svg class="icon icon-search">
+                                            <use xlink:href="#icon-search-icon"></use>
+                                        </svg>
+                                        <input type="text" class="form-control form-control--search form-control--white" placeholder="поиск">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 text-right">
+                                    <div class="tools-pagination">
+                                        <span class="pagination__info">24-96 из 960</span>
+                                        <span class="arrow-holder"><svg class="icon icon-arrow-blue-left">
+                                                              <use xlink:href="#icon-arrow-blue-left"></use>
+                                                          </svg></span>
+                                        <ul class="pagination__list">
+                                            <li class="pagination__item">
+                                                <a class="pagination__link" href="">1</a>
+                                            </li>
+                                            <li class="pagination__item active">
+                                                <span class="pagination__link" href="">2</span>
+                                            </li>
+                                            <li class="pagination__item">
+                                                <a class="pagination__link" href="">3</a>
+                                            </li>
+                                            <li class="pagination__item">
+                                                <span>...</span>
+                                            </li>
+                                            <li class="pagination__item">
+                                                <a class="pagination__link" href="">48</a>
+                                            </li>
+                                        </ul>
+                                        <span class="arrow-holder"><svg width="24px" height="11px" viewBox="0 0 24 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_trending_flat_black_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="стр" transform="translate(-400.000000, -14.000000)">
+            <g transform="translate(160.000000, 0.000000)" id="ic_trending_flat_black_24px">
+                <g transform="translate(240.000000, 7.000000)">
+                    <polygon id="Shape" fill="#3AB3DF" points="24 12.0526316 18.9473684 7 18.9473684 10.7894737 0 10.7894737 0 13.3157895 18.9473684 13.3157895 18.9473684 17.1052632"></polygon>
+                    <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-overflow">
+                            <table class="table">
+                                <tr>
+                                    <th class="td-left">
+                                        <label for="check-2" class="admin__checkbox">
+                                            <input type="checkbox" id="check-2" name="check-2">
+                                            <span class="admin__checkbox_emulator"></span>
+                                        </label>
+                                    </th>
+                                    <th>Код</th>
+                                    <th>Название ТТ</th>
+                                    <th>Область</th>
+                                    <th>Адрес ТТ</th>
+                                    <th>
+                                        <div class="drop__top">
+                                            <select name="" id="" class="selectpicker">
+                                                <option value="">Маршрут</option>
+                                                <option value="">Не маршрут</option>
+                                            </select>
+                                        </div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        <label for="check-2" class="admin__checkbox">
+                                            <input type="checkbox" id="check-2" name="check-2">
+                                            <span class="admin__checkbox_emulator"></span>
+                                        </label>
+                                    </td>
+                                    <td class="td-date">12345</td>
+                                    <td>ФОП Телинько</td>
+                                    <td class="td-date">Харьковская</td>
+                                    <td>Днепр, ул. Дмитрова</td>
+                                    <td class="td-date">
+                                        Нераспределен
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        <label for="check-2" class="admin__checkbox">
+                                            <input type="checkbox" id="check-2" name="check-2">
+                                            <span class="admin__checkbox_emulator"></span>
+                                        </label>
+                                    </td>
+                                    <td class="td-date">12345</td>
+                                    <td>ФОП Телинько</td>
+                                    <td class="td-date">Харьковская</td>
+                                    <td>Днепр, ул. Дмитрова</td>
+                                    <td class="td-date">
+                                        Нераспределен
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        <label for="check-2" class="admin__checkbox">
+                                            <input type="checkbox" id="check-2" name="check-2">
+                                            <span class="admin__checkbox_emulator"></span>
+                                        </label>
+                                    </td>
+                                    <td class="td-date">12345</td>
+                                    <td>ФОП Телинько</td>
+                                    <td class="td-date">Харьковская</td>
+                                    <td>Днепр, ул. Дмитрова</td>
+                                    <td class="td-date">
+                                        Нераспределен
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="td-left">
+                                        <label for="check-2" class="admin__checkbox">
+                                            <input type="checkbox" id="check-2" name="check-2">
+                                            <span class="admin__checkbox_emulator"></span>
+                                        </label>
+                                    </td>
+                                    <td class="td-date">12345</td>
+                                    <td>ФОП Телинько</td>
+                                    <td class="td-date">Харьковская</td>
+                                    <td>Днепр, ул. Дмитрова</td>
+                                    <td class="td-date">
+                                        Нераспределен
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="save text-center">
+                        <div class="save__wrapper save__wrapper--modal">добавить</div>
                     </div>
                 </div>
             </div>
