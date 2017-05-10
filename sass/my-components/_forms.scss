@@ -3,6 +3,11 @@
     &-info {
         margin-left: -15px;
     }
+    &-inline {
+      .form-group {
+        margin-right: 60px;
+      }
+    }
     &-control {
         border: none;
         box-shadow: none;
@@ -107,6 +112,10 @@
         margin-bottom: 0;
         @media (max-width: 1600px) {
             width: 15%;
+        }
+        &--full {
+          width: 100%;
+          margin-right: 24px;
         }
         &--black {
             color: $text-color;
@@ -3638,4 +3647,52 @@ li.fancybox-thumbs-loading {
 .ax5-ui-menubar.danger .ax-menu-body .ax-menu-item.hover {
     background: #d9534f;
     color: #fff
+}
+
+
+
+
+$DarkBrown: #292321;
+
+$Orange: #CC3300;
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: #9f9f9f;
+    font-weight: 300;
+}
+input[type="radio"] + label span {
+    position: relative;
+    display:inline-block;
+    width:18px;
+    height:18px;
+    margin:-1px 14px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+    border: 1px solid #cfcfcf;
+}
+
+
+
+input[type="radio"]:checked + label span{
+     border: 1px solid #3ab3df;
+     &:after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: #3ab3df;
+     }
+}
+
+.radio-group {
+  display: inline-block;
+  margin-right: 32px;
 }

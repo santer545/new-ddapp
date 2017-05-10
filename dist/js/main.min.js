@@ -14,9 +14,15 @@ $(window).resize(function() {
 
     brandlineButtonWidth();
 
+    // weekend height
+    blockBottomHeight ();
+
 
 });
 $(document).ready(function() {
+
+
+    blockBottomHeight ();
 
     // Раскрытие левого меню
     $(".js__arrow").click(function() {
@@ -966,3 +972,25 @@ function handleFileSelect(evt) {
 }
 
 document.getElementById('file').addEventListener('change', handleFileSelect, false);
+
+
+
+function blockBottomHeight () {
+    var headerHeight = $('.header').outerHeight(true);
+    var wrapperHeight = $('.wrapper').outerHeight(true);
+    var headingHeight = $('.heading-h2').outerHeight(true);
+    var weekendTopHeight = $('.weekend-top').outerHeight(true);
+    var weekendDaysHeight = $('.weekend-days').outerHeight(true);
+    var weekendDaysTools = $('.weekend-tools').outerHeight(true);
+    var editHeight = $('.edit__holder').outerHeight(true);
+    var dropHeight = wrapperHeight - headingHeight - headerHeight - editHeight - 40;
+    var weekendColumnHeight = dropHeight - weekendTopHeight - weekendDaysTools - weekendDaysHeight;
+    $('.weekend-column').css('max-height', weekendColumnHeight);
+    $('.weekend-section').outerHeight(weekendColumnHeight);
+    /*$('.weekend-section').outerHeight(dropHeight);*/
+    $('.drop__area').outerHeight(dropHeight);
+    $('.weekend').outerHeight(dropHeight);
+    var personalHeight = wrapperHeight - headerHeight;
+    $('.js-personal-height').outerHeight(personalHeight);
+    console.log(dropHeight);
+}
