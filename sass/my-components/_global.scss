@@ -1681,7 +1681,7 @@ div.ui-selected {
     @include clearfix;
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
         margin: 0;
-        width: 150px;
+        width: auto;
         line-height: 1.42857;
         &.btn-group .dropdown-toggle .filter-option {
             text-overflow: ellipsis;
@@ -1689,18 +1689,21 @@ div.ui-selected {
         }
         .dropdown-toggle {
             padding-top: 0;
+            padding-bottom: 0;  
             background-color: #f1f1f1;
             border: none;
         }
     }
     .bootstrap-select.btn-group .dropdown-toggle .caret {
-        top: 8px;
+        top: 10px;
         height: 15px;
-        right: 35px;
+        right: 25px;
         background-image: url('../assets/png/down.png');
+        background-size: 15px 8px;
     }
     .filter-option {
         color: #9f9f9f;
+        font-weight: 300;   
     }
     &--first {
         padding-left: 35px;
@@ -2031,6 +2034,7 @@ div.ui-selected {
     color: #222;
     padding-top: 12px;  
     padding-bottom: 12px;   
+    vertical-align: middle;
 }
 
 .table>tbody>tr>th {
@@ -2060,7 +2064,13 @@ div.ui-selected {
 .modal-dialog {
     width: 550px;
     &--sm {
-        width: 450px;   
+        width: 460px;   
+        .modal-body {
+            padding: 40px 40px 10px;  
+            .bootstrap-select .dropdown-toggle {
+                padding: 5px 8px 4px 2px;
+            }
+        }
     }
     &--lg {
         width: 1145px;
@@ -2110,8 +2120,12 @@ div.ui-selected {
         padding-top: 20px;
     }
     .wide-select {
+        &--modal {
+            float: left;
+            width: 63%; 
+        }
         .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-            width: 87%;
+            
             display: block;
         }
     }
@@ -2127,7 +2141,7 @@ div.ui-selected {
     width: 100%;
     border-radius: 0;
     .control-label {
-        padding-top: 10px;
+        padding-top: 7px;
     }
     .admin__checkbox_emulator {
         vertical-align: middle;
@@ -2389,9 +2403,9 @@ div.ui-selected {
         cursor: pointer;
     }
     &-item {
-        width: 178px; 
+        width: 177px; 
         float: left;
-        margin-right: 30px; 
+        margin-right: 20px; 
     }
     &-tools {
         @include clearfix;
@@ -2411,7 +2425,19 @@ div.ui-selected {
         margin-right: 20px;
         cursor: pointer;
         img {
-            height: 20px;   
+            height: 12px;   
+        }
+        &--plus {
+            img {
+                height: 17px;
+            }
+            
+        }
+        &--delete {
+            img {
+                height: 15px;
+            }
+            
         }
     }
     &-days {
@@ -2442,12 +2468,16 @@ div.ui-selected {
         padding-left: 30px; 
         @include clearfix;
     }
-    &-column {
-        width: 178px;  
-        margin-right: 30px;  
+    &-column,
+    .slimScrollDiv {
+        width: 177px;  
+        margin-right: 20px;  
         float: left;
         padding-bottom: 30px;   
         overflow-y: auto;
+    }
+    .slimScrollDiv {
+        width: 177px !important;    
     }
     &-tooltip {
         opacity: 0; 

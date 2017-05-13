@@ -210,6 +210,12 @@
         &--big {
             padding-top: 12px;
         }
+        &--modal {
+          float: left;
+          width: 30%; 
+          margin-right: 24px; 
+          padding-top: 15px;  
+        }
     }
 
 /**
@@ -3698,4 +3704,7 @@ input[type="radio"]:checked + label span{
 .radio-group {
   display: inline-block;
   margin-right: 32px;
+  label {
+    cursor: pointer;
+  }
 }

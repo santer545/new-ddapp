@@ -6,7 +6,7 @@ $(window).resize(function() {
     });
     initSameHeight();
     // Вызов кастомного скролла
-    $('.scroll-pane').jScrollPane();
+    /*$('.scroll-pane').jScrollPane();*/
 
     setTimeout(function() {
         initMicroColumnWidth();
@@ -19,7 +19,16 @@ $(window).resize(function() {
 
 
 });
+
+
+
 $(document).ready(function() {
+
+    $('.table-overflow').slimScroll({
+        height: '370px'
+    });
+
+    
 
 
     blockBottomHeight ();
@@ -191,6 +200,11 @@ $(document).ready(function() {
     // datepicker 
 
     initDateTimePicker();
+
+
+    // checked all 
+
+    checkAll ();
 
 
 
@@ -993,4 +1007,22 @@ function blockBottomHeight () {
     var personalHeight = wrapperHeight - headerHeight;
     $('.js-personal-height').outerHeight(personalHeight);
     console.log(dropHeight);
+
+    $('.weekend-column').slimScroll({
+        height: weekendColumnHeight
+    });
+}
+
+
+
+function checkAll () {
+    $('#js-check-all').click(function() {
+        if($('#check').is(':checked')) {
+            $('.admin__checkbox').find('input[type="checkbox"]').prop('checked', false);
+            
+        } else {
+            $('.admin__checkbox').find('input[type="checkbox"]').prop('checked', true);
+            
+        }
+    });
 }
