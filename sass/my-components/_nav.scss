@@ -122,6 +122,7 @@
 
 .nav-tabs {
     border-bottom: 1px solid #9f9f9f;
+    
     >li {
         &:first-child {
             margin-left: 30px;
@@ -146,6 +147,16 @@
             padding: 2px 30px;
         }
     }
+    &--inverse {
+        border-bottom: none;
+        > li {
+            > a {
+                text-transform: uppercase;
+                font-weight: 400;
+            }
+        }
+        
+    }
 }
 
 .tab-content {
@@ -153,6 +164,9 @@
     padding-left: 30px;
     .tab-content {
         padding: 0;
+    }
+    &--nopadding {
+        padding-top: 0;
     }
 }
 

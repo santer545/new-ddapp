@@ -130,6 +130,16 @@ textarea {
             }
         }
     }
+    &-modal {
+        .save-btn {
+            border: solid 1px #cfcfcf;
+            padding: 14px 0;
+        }
+        .accept-btn {
+            border-left: none;
+        }
+
+    }
 }
 
 .accept-btn {
@@ -1974,6 +1984,9 @@ div.ui-selected {
     &--inverse {
         padding-top: 11px;
     }
+    &--delete {
+        padding: 55px;
+    }
 }
 
 .modal-block {
@@ -2415,9 +2428,10 @@ div.ui-selected {
         border-bottom: 1px solid #f1f1f1;
     }
     &-count {
-        margin-right: 20px; 
+        margin-left: 15px; 
+        color: #9f9f9f;
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: bottom;
     }
     &-icon {
         display: inline-block;  
@@ -2446,7 +2460,7 @@ div.ui-selected {
         padding-left: 30px; 
         padding-top: 9px;   
         padding-bottom: 9px;    
-        color: #9f9f9f;
+        color: #222;
     }
     &-block {
         font-size: 14px;    
@@ -2512,6 +2526,15 @@ div.ui-selected {
             border-bottom: none;
             left: auto;
             right: 0;   
+        }
+    }
+    &-current {
+        display: none;
+        color: #9f9f9f;
+        font-weight: 300;
+        text-transform: none;
+        &.is-active {
+            display: inline;
         }
     }
 }
