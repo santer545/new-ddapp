@@ -1026,3 +1026,8 @@ function checkAll () {
         }
     });
 }
+checkedCount();
+function checkedCount() {
+    var length = $('.table-overflow input[type="checkbox"]').length;
+    console.log(length);
+}

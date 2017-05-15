@@ -2477,6 +2477,8 @@ div.ui-selected {
         font-size: 14px;    
         color: #9f9f9f;
         padding-top: 15px;  
+        padding-bottom: 7px;
+        border-bottom: 1px solid #f1f1f1;
         &:hover {
             .weekend-tooltip {
                 opacity: 1; 
