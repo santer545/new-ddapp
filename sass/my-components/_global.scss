@@ -147,6 +147,12 @@ textarea {
     border-right: none;
 }
 
+.route-modal-top {
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: auto;
+        min-width: 200px;
+    }
+}
 
 /**
  * header
@@ -1986,6 +1992,11 @@ div.ui-selected {
     }
     &--delete {
         padding: 55px;
+    }
+    &--heading {
+        padding: 15px 20px;
+        font-size: 22px;
+        font-weight: 300;
     }
 }
 
