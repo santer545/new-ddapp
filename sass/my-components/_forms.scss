@@ -234,7 +234,7 @@
         background-size: 100%;
     }
     .dropdown-toggle {
-        padding: 12px 8px 8px 2px;
+        padding: 5px 8px 4px 2px;
         &:focus {
             outline: none;
             outline: 0 dotted #333!important;
@@ -259,18 +259,60 @@
             display: none;
         }
     }
+    &:focus,
+    &:hover {
+      background-color: #fff;
+    }
+}
+
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.btn-default.dropdown-toggle.focus, .open>.btn-default.dropdown-toggle:focus, .open>.btn-default.dropdown-toggle:hover {
+  background-color: #fff;
 }
 
 .dropdown-menu {
+  
+  /* &[role="combobox"] {
+    padding: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    &.inner {
+      border-right: 1px solid #cfcfcf;
+      border-left: 1px solid #cfcfcf;
+    }
+  } */
+  
     >li {
         >a {
             padding: 6px 20px;
+            background-color: #fff;
             font-size: 16px;
             &:focus {
                 outline: none;
             }
         }
     }
+}
+
+.bs-searchbox {
+  border: none;
+  padding: 0;
+  width: 80%;
+  height: 29px;
+  .form-control {
+    height: 27px;
+    border: none;
+    &:focus {
+      border-bottom: none;
+    }
+  }
+}
+
+
+.btn-group.open .dropdown-toggle {
+    float: none;
+    background: #fff;
+    box-shadow: none;
 }
 
 .filter-option {
@@ -3670,7 +3712,7 @@ input[type="radio"] {
 }
 input[type="radio"] + label {
     color: #9f9f9f;
-    font-weight: 300;
+    font-weight: 400;
 }
 input[type="radio"] + label span {
     position: relative;

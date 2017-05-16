@@ -15,7 +15,10 @@ $(window).resize(function() {
     brandlineButtonWidth();
 
     // weekend height
-    blockBottomHeight ();
+    blockBottomHeight();
+
+    $('.weekend-heading').dotdotdot();
+    $('.weekend-text').dotdotdot();
 
 
 });
@@ -28,10 +31,12 @@ $(document).ready(function() {
         height: '370px'
     });
 
-    
 
 
-    blockBottomHeight ();
+
+    checkedCount();
+
+    blockBottomHeight();
 
     // Раскрытие левого меню
     $(".js__arrow").click(function() {
@@ -79,6 +84,9 @@ $(document).ready(function() {
 
     // Обрезка текста многоточием
     $('.route__info').dotdotdot();
+
+    $('.weekend-heading').dotdotdot();
+    $('.weekend-text').dotdotdot();
 
     // tools panel
     $('#tools_map').on('show.bs.tab', function(e) {
@@ -204,7 +212,7 @@ $(document).ready(function() {
 
     // checked all 
 
-    checkAll ();
+    checkAll();
 
 
 
@@ -553,7 +561,7 @@ function initAddBrandline() {
         initSameHeight();
 
 
-        
+
 
     });
 }
@@ -989,15 +997,15 @@ document.getElementById('file').addEventListener('change', handleFileSelect, fal
 
 
 
-function blockBottomHeight () {
+function blockBottomHeight() {
     var headerHeight = $('.header').outerHeight(true);
     var wrapperHeight = $('.wrapper').outerHeight(true);
     var headingHeight = $('.heading-h2').outerHeight(true);
-    var weekendTopHeight = $('.weekend-top').outerHeight(true);
+    var weekendTopHeight = $('.nav-tabs').outerHeight(true);
     var weekendDaysHeight = $('.weekend-days').outerHeight(true);
     var weekendDaysTools = $('.weekend-tools').outerHeight(true);
     var editHeight = $('.edit__holder').outerHeight(true);
-    var dropHeight = wrapperHeight - headingHeight - headerHeight - editHeight - 40;
+    var dropHeight = wrapperHeight - headingHeight - headerHeight - editHeight - 60;
     var weekendColumnHeight = dropHeight - weekendTopHeight - weekendDaysTools - weekendDaysHeight;
     $('.weekend-column').css('max-height', weekendColumnHeight);
     $('.weekend-section').outerHeight(weekendColumnHeight);
@@ -1006,7 +1014,7 @@ function blockBottomHeight () {
     $('.weekend').outerHeight(dropHeight);
     var personalHeight = wrapperHeight - headerHeight;
     $('.js-personal-height').outerHeight(personalHeight);
-    console.log(dropHeight);
+
 
     $('.weekend-column').slimScroll({
         height: weekendColumnHeight
@@ -1015,19 +1023,32 @@ function blockBottomHeight () {
 
 
 
-function checkAll () {
+function checkAll() {
     $('#js-check-all').click(function() {
-        if($('#check').is(':checked')) {
+        if ($('#check').is(':checked')) {
             $('.admin__checkbox').find('input[type="checkbox"]').prop('checked', false);
-            
+
         } else {
             $('.admin__checkbox').find('input[type="checkbox"]').prop('checked', true);
-            
+
         }
     });
 }
-checkedCount();
+
+
+
 function checkedCount() {
-    var length = $('.table-overflow input[type="checkbox"]').length;
-    console.log(length);
+    $('.table-overflow input[type="checkbox"]').change(function() {
+        var x = $('.table-overflow input[type="checkbox"]:checked').length;
+        $('.js-tt-count').text(x);
+    });
+}
+
+tableSort();
+
+function tableSort() {
+    $('.sort-item').click(function() {
+        $(this).closest('table').find('.sort-item').removeClass('active');
+        $(this).addClass('active').find('.sort').toggleClass('active');
+    });
 }

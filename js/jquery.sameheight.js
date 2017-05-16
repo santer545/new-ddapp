@@ -19,6 +19,12 @@ function initSameHeight() {
         multiLine: true,
         biggestHeight: true
     });
+    jQuery('.weekend-section').sameHeight({
+        elements: '.weekend-block',
+        flexible: true,
+        multiLine: true,
+        biggestHeight: true
+    });
 };
 (function($) {
     $.fn.sameHeight = function(opt) {

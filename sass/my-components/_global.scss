@@ -148,6 +148,7 @@ textarea {
 }
 
 .route-modal-top {
+    padding-left: 10px;
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
         width: auto;
         min-width: 200px;
@@ -1994,10 +1995,14 @@ div.ui-selected {
         padding: 55px;
     }
     &--heading {
-        padding: 15px 20px;
+        padding: 15px 25px;
         font-size: 22px;
         font-weight: 300;
     }
+}
+
+.modal-heading {
+    font-size: 20px;
 }
 
 .modal-block {
@@ -2041,7 +2046,7 @@ div.ui-selected {
 .table>tfoot>tr>th.td-left,
 .table>thead>tr>td.td-left,
 .table>thead>tr>th.td-left {
-    padding-left: 15px;
+    padding-left: 25px;
 }
 
 
@@ -2089,6 +2094,10 @@ div.ui-selected {
     width: 550px;
     &--sm {
         width: 460px;   
+        margin-top: 0;
+        margin-bottom: 0;
+        top: 50%;
+        transform: translate(0, -50%)!important;
         .modal-body {
             padding: 40px 40px 10px;  
             .bootstrap-select .dropdown-toggle {
@@ -2427,7 +2436,7 @@ div.ui-selected {
         cursor: pointer;
     }
     &-item {
-        width: 177px; 
+        width: calc(14.285% - 20px); 
         float: left;
         margin-right: 20px; 
     }
@@ -2490,6 +2499,17 @@ div.ui-selected {
     &-heading {
         color: #222;
         margin-bottom: 3px; 
+        max-height: 40px;
+        overflow: hidden;
+    }
+    &-text {
+        max-height: 60px;
+        overflow: hidden;
+        display: block;
+    }
+    &-adding {
+        padding-top: 6px;
+        cursor: pointer;
     }
     &-section {
         padding-left: 30px; 
@@ -2497,24 +2517,30 @@ div.ui-selected {
     }
     &-column,
     .slimScrollDiv {
-        width: 177px;  
+        width: calc(14.285% - 20px);  
         margin-right: 20px;  
         float: left;
         padding-bottom: 30px;   
         overflow-y: auto;
     }
     .slimScrollDiv {
-        width: 177px !important;    
+        width: calc(14.285% - 20px)!important;    
     }
     &-tooltip {
         opacity: 0; 
         visibility: hidden;
         transition: opacity 0.3s, visibility 0.3s;
         .weekend-icon {
+            margin-right: 7px;
             img {
-                height: 15px;   
+                height: 12px;   
             }
             
+        }
+        .weekend-icon--delete {
+            img {
+                height: 15px;
+            }
         }
     }
     &-header {
@@ -2548,6 +2574,26 @@ div.ui-selected {
         text-transform: none;
         &.is-active {
             display: inline;
+        }
+    }
+}
+
+.sort {
+    margin-left: 5px;
+    display: none;
+    img {
+        width: 10px;
+    }
+    &-item {
+        cursor: pointer;
+        &.active {
+            .sort {
+                display: inline-block;
+                &.active {
+                    transform: rotate(180deg);
+                    transform-origin: 50% 57%;
+                }
+            }
         }
     }
 }
