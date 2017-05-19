@@ -17,9 +17,17 @@ $(window).resize(function() {
     // weekend height
     blockBottomHeight();
 
-    $('.weekend-heading').dotdotdot();
-    $('.weekend-text').dotdotdot();
+    // dotted
 
+    dotted();
+
+    $('.weekend-heading').dotdotdot({
+        
+    });
+    $('.weekend-text').dotdotdot({
+        
+    });
+    
 
 });
 
@@ -29,6 +37,26 @@ $(document).ready(function() {
 
     $('.table-overflow').slimScroll({
         height: '370px'
+    });
+
+    //dotted
+
+    dotted();
+
+    $('.weekend-heading').dotdotdot({
+        
+    });
+    $('.weekend-text').dotdotdot({
+         ellipsis: '...',
+        watch   : true,
+        wrap    : 'letter',
+        height  : 20 * 3, // max number of lines
+    });
+    $('.weekend-text.full').dotdotdot({
+         ellipsis: '...',
+        watch   : true,
+        wrap    : 'letter',
+        height  : 20 * 4, // max number of lines
     });
 
 
@@ -85,8 +113,7 @@ $(document).ready(function() {
     // Обрезка текста многоточием
     $('.route__info').dotdotdot();
 
-    $('.weekend-heading').dotdotdot();
-    $('.weekend-text').dotdotdot();
+
 
     // tools panel
     $('#tools_map').on('show.bs.tab', function(e) {
@@ -123,7 +150,8 @@ $(document).ready(function() {
     // Bootstrap select
     $('.selectpicker').selectpicker({
         dropupAuto: false,
-        noneSelectedText: 'Ничего не выбрано'
+        noneSelectedText: 'Ничего не выбрано',
+        liveSearchPlaceholder: 'Поиск'
     });
 
     $('#select-default').selectpicker();
@@ -1046,9 +1074,41 @@ function checkedCount() {
 
 tableSort();
 
+var item_id = '';
+
 function tableSort() {
     $('.sort-item').click(function() {
         $(this).closest('table').find('.sort-item').removeClass('active');
-        $(this).addClass('active').find('.sort').toggleClass('active');
+        $(this).addClass('active');
+        var id = $(this).attr('id');
+        console.log(id, item_id);
+
+        if (id === item_id) {
+            $(this).find('.sort').toggleClass('active');
+        }
+        item_id = id;
+
+
     });
+}
+
+
+function dotted() {
+    var wh = $('.weekend-heading').height();
+    var wt = $('.weekend-text').height();
+
+    $('.weekend-heading').each(function(index) {
+        var vh = $(this).height();
+
+        if (vh <= 21) {
+            
+            $(this).closest('.weekend-block').find('.weekend-text').css('max-height', '80px').addClass('full');
+            
+        } else {
+            
+            $(this).closest('.weekend-block').find('.weekend-text').css('max-height', '60px');
+            
+        }
+    });
+
 }

@@ -395,7 +395,7 @@
                     </form>
                 </div>
                 <div>
-                    <ul class="nav nav-tabs nav-tabs--inverse nav-micro" role="tablist">
+                    <ul class="nav nav-tabs nav-tabs--sm nav-tabs--inverse nav-micro" role="tablist">
                         <li role="presentation" class="active">
                             <a href="#first-weekend" aria-controls="#first-weekend" role="tab" data-toggle="tab">
                                     неделя 1 <span class="weekend-current is-active">(текущая)</span></a>
@@ -403,7 +403,7 @@
                         <li role="presentation">
                             <a href="#second-weekend" aria-controls="#second-weekend" role="tab" data-toggle="tab">неделя 2 <span class="weekend-current">(текущая)</span></a>
                         </li>
-                        <li class="weekend-adding"><img src="assets/png/plus@2x.png" alt=""></li>
+                        <li class="weekend-adding"><img src="assets/png/plus@2x.png" alt=""  data-toggle="tooltip" data-placement="right" title="Добавить неделю"></li>
                     </ul>
                     <div class="tab-content tab-content--nopadding micro__holder">
                         <div role="tabpanel" class="tab-pane active fade in tab-pane--margin" id="first-weekend">
@@ -501,7 +501,7 @@
                                         <div class="weekend-column">
                                             <div class="weekend-block">
                                                 <p class="weekend-heading">"ТОВ" Наливайка "ТОВ" Наливайка "ТОВ" Наливайка</p>
-                                                <span class="weekend-text">г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16</span>
+                                                <span class="weekend-text" title="г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16  ул. Чернобыльская, 16">г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16  ул. Чернобыльская, 16</span>
                                                 <div class="weekend-tooltip">
                                                     <a class="weekend-icon weekend-icon--reply" role="button" data-toggle="modal" data-target="#myModal2">
                                                         <img src="assets/png/reply@2x.png" alt="">
@@ -513,7 +513,7 @@
                                             </div>
                                             <div class="weekend-block">
                                                 <p class="weekend-heading">"ТОВ" Наливайка</p>
-                                                <span class="weekend-text">г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16</span>
+                                                <span class="weekend-text" title="г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16 г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16">г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16 г. Киев, Вышгородская обл. с. Слобудка, ул. Чернобыльская, 16</span>
                                                 <div class="weekend-tooltip">
                                                     <a class="weekend-icon weekend-icon--reply" role="button" data-toggle="modal" data-target="#myModal2">
                                                         <img src="assets/png/reply@2x.png" alt="">
@@ -1618,10 +1618,18 @@
                                 <div class="route-modal-top">
                                     <div class="col-xs-5">
                                         <div class="search search--modal">
-                                            <svg class="icon icon-search">
-                                                <use xlink:href="#icon-search-icon"></use>
-                                            </svg>
-                                            <input type="text" class="form-control form-control--search form-control--white" placeholder="поиск">
+                                           <svg class="icon icon-search">
+                                               <use xlink:href="#icon-search-icon"></use>
+                                           </svg> 
+                                            <!-- <select name="" id="" class="selectpicker" data-style="btn-primary" data-live-search="true">
+                                                <option value="">
+                                                    Поиск
+                                                </option>
+                                                <option value="">
+                                                    Поиск
+                                                </option>
+                                            </select> -->
+                                            <input type="text" class="form-control form-control--search form-control--white" placeholder="поиск"> 
                                         </div>
                                     </div>
                                     <div class="col-xs-7 text-right">
@@ -1675,10 +1683,10 @@
                                             <span class="admin__checkbox_emulator"></span>
                                         </label>
                                     </th>
-                                    <th><span class="sort-item">Код <span class="sort active"><img src="assets/png/sortic.png" alt=""></span></span></th>
-                                    <th><span class="sort-item">Название ТТ <span class="sort active"><img src="assets/png/sortic.png" alt=""></span></span></th>
-                                    <th><span class="sort-item">Область <span class="sort active"><img src="assets/png/sortic.png" alt=""></span></span></th>
-                                    <th><span class="sort-item">Адрес ТТ <span class="sort active"><img src="assets/png/sortic.png" alt=""></span></span></th>
+                                    <th><span class="sort-item" id="cod">Код <span class="sort"><img src="assets/png/sortic.png" alt=""></span></span></th>
+                                    <th><span class="sort-item" id="name">Название ТТ <span class="sort"><img src="assets/png/sortic.png" alt=""></span></span></th>
+                                    <th><span class="sort-item" id="area">Область <span class="sort"><img src="assets/png/sortic.png" alt=""></span></span></th>
+                                    <th><span class="sort-item">Адрес ТТ <span class="sort"><img src="assets/png/sortic.png" alt=""></span></span></th>
                                     <th><span class="sort-item active">Маршрут <span class="sort"><img src="assets/png/sortic.png" alt=""></span></span></th>
                                 </tr>
                                 <tr>
@@ -1762,6 +1770,7 @@
         <script src="js/jquery.sameheight.js"></script>
         <script src="js/jquery.fancybox.min.js"></script>
         <script src="js/jquery.slimscroll.min.js"></script>
+        <script src="js/jquery.text-overflow.js"></script>
         <script src="js/main.js"></script>
 </body>
 

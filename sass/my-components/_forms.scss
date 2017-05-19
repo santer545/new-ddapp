@@ -244,8 +244,46 @@
     }
 }
 
+
+.dropdown-toggle.bs-placeholder.btn-primary {
+  background-color: transparent!important;
+  border-bottom: 1px solid #222;
+  padding-left: 40px; 
+  background-image: url('../assets/svg/search-icon.svg');
+  background-repeat: no-repeat;
+  background-position: 0 7px;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.btn-primary.dropdown-toggle.focus, .open>.btn-primary.dropdown-toggle:focus, .open>.btn-primary.dropdown-toggle:hover {
+  background-color: transparent;
+}
+
+.search {
+  .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;  
+    .caret {
+      display: none;  
+    }
+    .filter-option {
+      color: #999;
+    }
+  }
+}
+
+
+
+
+
+
+
+
 .btn-group.open .dropdown-toggle {
     float: none;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+      color: #262626;
+    background-color: #f5f5f5;
 }
 
 .dropdown-toggle {
@@ -270,18 +308,6 @@
 }
 
 .dropdown-menu {
-  
-  /* &[role="combobox"] {
-    padding: 0;
-    top: 0;
-    background-color: transparent;
-    border: none;
-    &.inner {
-      border-right: 1px solid #cfcfcf;
-      border-left: 1px solid #cfcfcf;
-    }
-  } */
-  
     >li {
         >a {
             padding: 6px 20px;
@@ -311,14 +337,14 @@
 
 .btn-group.open .dropdown-toggle {
     float: none;
-    background: #fff;
+    background-color: #fff;
     box-shadow: none;
 }
 
 .filter-option {
     color: $text-color;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: normal;
     text-overflow: ellipsis;
     padding-right: 40px;
 }
