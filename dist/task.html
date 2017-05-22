@@ -434,9 +434,15 @@
                                             <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Прикрепленные фото</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9">
                                                 <ul class="photo-list">
-                                                    <li class="photo-item"><a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a></li>
-                                                    <li class="photo-item"><a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a></li>
-                                                    <li class="photo-item"><a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a></li>
+                                                    <li class="photo-item">
+                                                        <a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a>
+                                                    </li>
+                                                    <li class="photo-item">
+                                                        <a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a>
+                                                    </li>
+                                                    <li class="photo-item">
+                                                        <a data-fancybox="images-2" href="assets/images/comment-1.jpg"><img src="assets/images/comment-1.jpg" alt=""></a>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -584,7 +590,8 @@
                                                                 </g>
                                                             </g>
                                                         </svg>
-                                                    </figure></label>
+                                                    </figure>
+                                                </label>
                                             </form>
                                         </div>
                                     </div>
@@ -631,7 +638,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-6 save-btn">
-                            <div class="text-center">Доработать</div>
+                            <div class="text-center" data-toggle="modal" data-target="#myModal2">Доработать</div>
                         </div>
                         <div class="col-xs-6 accept-btn save-btn">
                             <div class="text-center">Подтвердить выполнение</div>
@@ -640,6 +647,35 @@
                 </div>
             </div>
         </main>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog--sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form action="">
+                        <div class="modal-block">
+                            <div class="modal-heading">Добавьте пояснение к доработке</div>
+                        </div>
+                        <div class="modal-block">
+                            <div class="form-group form-group--modal">
+                                <textarea type="text" name="codtt" id="description" placeholder="Комментарий"></textarea>
+                            </div>
+                        </div>
+                        <input value="test" accept="image/*" type="file" name="file-2" id="file-2" class="inputfile inputfile-4" data-multiple-caption="Прикреплено {count} фото" multiple />
+                        <label for="file-2">
+                            <figure>
+                                <img src="assets/png/photo-blue-copy.png" alt="">
+                                <span>Прикрепить фото</span>
+                            </figure></label>
+                        <ul id="list"></ul>
+                    </form>
+                </div>
+                <div class="save text-center">
+                    <div class="save__wrapper save__wrapper--modal">ок</div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/jquery-2.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -654,6 +690,7 @@
     <script src="js/jquery.sameheight.js"></script>
     <script src="js/jquery.custom-file-input.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

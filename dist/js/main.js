@@ -22,18 +22,20 @@ $(window).resize(function() {
     dotted();
 
     $('.weekend-heading').dotdotdot({
-        
+
     });
     $('.weekend-text').dotdotdot({
-        
+
     });
-    
+
 
 });
 
 
 
 $(document).ready(function() {
+
+
 
     $('.table-overflow').slimScroll({
         height: '370px'
@@ -44,19 +46,19 @@ $(document).ready(function() {
     dotted();
 
     $('.weekend-heading').dotdotdot({
-        
+
     });
     $('.weekend-text').dotdotdot({
-         ellipsis: '...',
-        watch   : true,
-        wrap    : 'letter',
-        height  : 20 * 3, // max number of lines
+        ellipsis: '...',
+        watch: true,
+        wrap: 'letter',
+        height: 20 * 3, // max number of lines
     });
     $('.weekend-text.full').dotdotdot({
-         ellipsis: '...',
-        watch   : true,
-        wrap    : 'letter',
-        height  : 20 * 4, // max number of lines
+        ellipsis: '...',
+        watch: true,
+        wrap: 'letter',
+        height: 20 * 4, // max number of lines
     });
 
 
@@ -995,7 +997,6 @@ function handleFileSelect(evt) {
         var reader = new FileReader();
 
         // Closure to capture the file information.
-
         reader.onload = (function(theFile) {
             return function(e) {
 
@@ -1009,19 +1010,74 @@ function handleFileSelect(evt) {
                     '" title="', escape(theFile.name),
                     '"/></a>'
                 ].join('');
-
+                console.log('добавление!!');
                 document.getElementById('list').insertBefore(span, null);
 
-
+                $('#myModal2').on('shown.bs.modal', function() {
+                    handleFileSelect();
+                })
             };
         })(f);
 
         // Read in the image file as a data URL.
         reader.readAsDataURL(f);
+
+
     }
 }
 
-document.getElementById('file').addEventListener('change', handleFileSelect, false);
+document.getElementById('file').addEventListener('change', handleFileSelect, true);
+$('#myModal2').on('shown.bs.modal', function() {
+    document.getElementById('file').addEventListener('change', handleFileSelectModal, true);
+});
+
+function handleFileSelectModal(evt) {
+
+    var files = evt.target.files;
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+        // Only process image files.
+        if (!f.type.match('image.*')) {
+            continue;
+        }
+
+        var reader = new FileReader();
+
+        // Closure to capture the file information.
+        reader.onload = (function(theFile) {
+            return function(e) {
+
+
+                // Render thumbnail.
+                var span = document.createElement('li');
+
+                span.innerHTML = [
+                    '<div class="img-delete"><img src="assets/png/cancel.png"></div><a data-fancybox="images" data-type="image" data-width="1000" href="', e.target.result, '"><img style="width: 113px;" src="',
+                    e.target.result,
+                    '" title="', escape(theFile.name),
+                    '"/></a>'
+                ].join('');
+                console.log('добавление!!');
+                document.getElementById('list').insertBefore(span, null);
+
+                $('#myModal2').on('shown.bs.modal', function() {
+                    handleFileSelect();
+                })
+            };
+        })(f);
+
+        // Read in the image file as a data URL.
+        reader.readAsDataURL(f);
+
+
+    }
+
+}
+
+
+
+
 
 
 
@@ -1101,13 +1157,13 @@ function dotted() {
         var vh = $(this).height();
 
         if (vh <= 21) {
-            
+
             $(this).closest('.weekend-block').find('.weekend-text').css('max-height', '80px').addClass('full');
-            
+
         } else {
-            
+
             $(this).closest('.weekend-block').find('.weekend-text').css('max-height', '60px');
-            
+
         }
     });
 

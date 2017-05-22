@@ -765,8 +765,14 @@ input::-webkit-contacts-auto-fill-button {
     cursor: pointer;
     display: inline-block;
     overflow: hidden;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: #9f9f9f;
     
     span {
+      display: inline-block;  
+      vertical-align: middle;
       font-size: 16px;
       font-weight: 400; 
       color: #9f9f9f;
@@ -1679,7 +1685,7 @@ li.fancybox-thumbs-loading {
     left: 0px;
     top: 0px;
     width: 195px;
-    opacity: 0.95;
+    opacity: 1;
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
     perspective: 1000px;

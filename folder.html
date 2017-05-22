@@ -561,11 +561,14 @@
     <script src="js/bootstrap-select.min.js"></script>
     <script src="js/jquery.sameheight.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
     <script src="js/ax5core.min.js"></script>
     <script src="js/ax5menu.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
     var menu;
+    var menu1;
+    var menu2;
     $(document.body).ready(function() {
         menu = new ax5.ui.menu({
             position: "absolute", // default position is "fixed"
@@ -582,18 +585,19 @@
                 label: "Удалить",
             }]
         });
-        menu.onClick = function() {
-            console.log(this);
-        };
+        
         $(".js-folder-img img").bind("contextmenu", function(e) {
             menu.popup(e);
             ax5.util.stopEvent(e);
             // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
         });
+        menu.onLoad = function() {
+            menu1.close();
+            menu2.close();
+        };
     });
-    </script>
-    <script type="text/javascript">
-    var menu1;
+    
+    
     $(document.body).ready(function() {
         menu1 = new ax5.ui.menu({
             position: "absolute", // default position is "fixed"
@@ -636,8 +640,10 @@
                 }]
             }]
         });
-        menu.onClick = function() {
-            console.log(this);
+        
+        menu1.onLoad = function() {
+            menu.close();
+            menu2.close();
         };
         $("#context-menu-target").bind("contextmenu", function(e) {
             menu1.popup(e);
@@ -645,9 +651,8 @@
             // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
         });
     });
-    </script>
-    <script type="text/javascript">
-    var menu2;
+    
+    
     $(document.body).ready(function() {
         menu2 = new ax5.ui.menu({
             position: "absolute", // default position is "fixed"
@@ -669,8 +674,10 @@
 
             }]
         });
-        menu.onClick = function() {
-            console.log(this);
+       
+        menu2.onLoad = function() {
+            menu.close();
+            menu1.close();
         };
         $(".js-file-menu").bind("contextmenu", function(e) {
             menu2.popup(e);

@@ -411,6 +411,7 @@
     &.direction-left {
         @include transform-origin(left center);
     }
+    opacity: 1;
 }
 
 .ax5-ui-menubar {
