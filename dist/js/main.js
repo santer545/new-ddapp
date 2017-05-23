@@ -1028,7 +1028,7 @@ function handleFileSelect(evt) {
 
 document.getElementById('file').addEventListener('change', handleFileSelect, true);
 $('#myModal2').on('shown.bs.modal', function() {
-    document.getElementById('file').addEventListener('change', handleFileSelectModal, true);
+    document.getElementById('file-2').addEventListener('change', handleFileSelectModal, true);
 });
 
 function handleFileSelectModal(evt) {
@@ -1058,8 +1058,8 @@ function handleFileSelectModal(evt) {
                     '" title="', escape(theFile.name),
                     '"/></a>'
                 ].join('');
-                console.log('добавление!!');
-                document.getElementById('list').insertBefore(span, null);
+                
+                document.getElementById('list-modal').insertBefore(span, null);
 
                 $('#myModal2').on('shown.bs.modal', function() {
                     handleFileSelect();

@@ -25,7 +25,7 @@
             }
             if (fileName) {
                 
-                $label.find('span').html(fileName);
+                $label.find('.count-img').html(fileName);
             } else
                 $label.html(labelVal);
         });
@@ -33,10 +33,10 @@
         function removeImg() {
             $(document).on('click', '.img-delete', function() {
 
-                $(this).closest('#list li').remove();
+                $(this).closest('ul li').remove();
 
                 /*$(this).closest('#list li').remove();*/
-                var length = $('#list').find('li').length;
+                var length = $('ul').find('li').length;
 
                 // Сохраняем значения полей форм
 
