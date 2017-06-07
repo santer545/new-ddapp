@@ -637,7 +637,7 @@ function initDeleteSize() {
         var parent = $(this).closest('.add__product');
         var number_size = $(this).closest('.add__info').index();
 
-        console.log(number_size);
+        
         if (parent.find('.preview__table').length > 1) {
             $(this).closest('.add__product').find('.preview__table:eq(' + number_size + ')').remove();
         }
@@ -671,7 +671,7 @@ function initRemoveBrandline() {
 
         if (lg > 1) {
             $(this).closest('.add__product').remove();
-            console.log('yo');
+            
             $(this).closest('.add__product').find('.color__list').slick({
                 infinite: false,
                 vertical: true,
@@ -1010,7 +1010,7 @@ function handleFileSelect(evt) {
                     '" title="', escape(theFile.name),
                     '"/></a>'
                 ].join('');
-                console.log('добавление!!');
+                
                 document.getElementById('list').insertBefore(span, null);
 
                 $('#myModal2').on('shown.bs.modal', function() {
@@ -1025,6 +1025,7 @@ function handleFileSelect(evt) {
 
     }
 }
+
 
 document.getElementById('file').addEventListener('change', handleFileSelect, true);
 $('#myModal2').on('shown.bs.modal', function() {
@@ -1137,7 +1138,7 @@ function tableSort() {
         $(this).closest('table').find('.sort-item').removeClass('active');
         $(this).addClass('active');
         var id = $(this).attr('id');
-        console.log(id, item_id);
+        
 
         if (id === item_id) {
             $(this).find('.sort').toggleClass('active');
