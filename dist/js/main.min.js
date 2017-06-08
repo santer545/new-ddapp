@@ -28,6 +28,8 @@ $(window).resize(function() {
 
     });
 
+    modalHeight ();
+
 
 });
 
@@ -244,7 +246,7 @@ $(document).ready(function() {
 
     checkAll();
 
-
+    modalHeight ();
 
 
 
@@ -295,6 +297,25 @@ function initMicroColumnWidth() {
     $('.micro__right').css('width', micro__right);
     $('.grafik').css('width', grafik);
 }
+
+
+
+
+function modalHeight () {
+    var h = $(window).height();
+    var hDifference = $(window).height() - 200;
+    var hSmall = $(window).height();
+    
+    if(hSmall < 800) {
+        $('#myModal3').find('.modal-dialog--lg').height(600);
+
+    } else if(hSmall < 601) {
+        $('#myModal3').find('.modal-dialog--lg').css({'top' : '0!important'});
+    } else {
+        $('#myModal3').find('.modal-dialog--lg').height(hDifference);
+    }
+}
+
 
 
 
