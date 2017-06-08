@@ -39,9 +39,7 @@ $(document).ready(function() {
 
 
 
-    $('.table-overflow').slimScroll({
-        height: '370px'
-    });
+    
 
     //dotted
 
@@ -1189,4 +1187,24 @@ function dotted() {
         }
     });
 
+}
+
+$('#myModal3').on('show.bs.modal', function (e) {
+    modalBodyHeight ();
+});
+
+
+function modalBodyHeight () {
+    var mH = $('.modal-dialog--lg .modal-header').outerHeight(true);
+    var mF = $('.modal-dialog--lg .save').outerHeight(true);
+    var mLg = $('.modal-dialog--lg').outerHeight(true);
+    var mCt = mLg - mF - mH;
+    console.log(mH);
+    console.log(mF);
+    console.log(mCt);
+    /*$('.modal-dialog--lg .table-overflow').css('max-height', mCt);*/
+
+    $('.table-overflow').slimScroll({
+        height: '370'
+    });
 }
