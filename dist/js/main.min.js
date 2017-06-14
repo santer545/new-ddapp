@@ -28,7 +28,11 @@ $(window).resize(function() {
 
     });
 
-    modalHeight ();
+    modalHeight();
+
+    $('#myModal3').on('shown.bs.modal', function(e) {
+        modalBodyHeight();
+    });
 
 
 });
@@ -39,7 +43,9 @@ $(document).ready(function() {
 
 
 
-    
+    $('#myModal3').on('shown.bs.modal', function(e) {
+        modalBodyHeight();
+    });
 
     //dotted
 
@@ -244,7 +250,7 @@ $(document).ready(function() {
 
     checkAll();
 
-    modalHeight ();
+    modalHeight();
 
 
 
@@ -299,16 +305,17 @@ function initMicroColumnWidth() {
 
 
 
-function modalHeight () {
+function modalHeight() {
     var h = $(window).height();
     var hDifference = $(window).height() - 200;
     var hSmall = $(window).height();
     
-    if(hSmall < 800) {
-        $('#myModal3').find('.modal-dialog--lg').height(600);
+    if (hSmall < 800) {
+        $('#myModal3').find('.modal-dialog--lg').height(578);
+        
 
-    } else if(hSmall < 601) {
-        $('#myModal3').find('.modal-dialog--lg').css({'top' : '0!important'});
+    } else if (hSmall < 601) {
+        $('#myModal3').find('.modal-dialog--lg').css({ 'top': '0!important' });
     } else {
         $('#myModal3').find('.modal-dialog--lg').height(hDifference);
     }
@@ -656,7 +663,7 @@ function initDeleteSize() {
         var parent = $(this).closest('.add__product');
         var number_size = $(this).closest('.add__info').index();
 
-        
+
         if (parent.find('.preview__table').length > 1) {
             $(this).closest('.add__product').find('.preview__table:eq(' + number_size + ')').remove();
         }
@@ -690,7 +697,7 @@ function initRemoveBrandline() {
 
         if (lg > 1) {
             $(this).closest('.add__product').remove();
-            
+
             $(this).closest('.add__product').find('.color__list').slick({
                 infinite: false,
                 vertical: true,
@@ -1029,7 +1036,7 @@ function handleFileSelect(evt) {
                     '" title="', escape(theFile.name),
                     '"/></a>'
                 ].join('');
-                
+
                 document.getElementById('list').insertBefore(span, null);
 
                 $('#myModal2').on('shown.bs.modal', function() {
@@ -1078,7 +1085,7 @@ function handleFileSelectModal(evt) {
                     '" title="', escape(theFile.name),
                     '"/></a>'
                 ].join('');
-                
+
                 document.getElementById('list-modal').insertBefore(span, null);
 
                 $('#myModal2').on('shown.bs.modal', function() {
@@ -1157,7 +1164,7 @@ function tableSort() {
         $(this).closest('table').find('.sort-item').removeClass('active');
         $(this).addClass('active');
         var id = $(this).attr('id');
-        
+
 
         if (id === item_id) {
             $(this).find('.sort').toggleClass('active');
@@ -1189,22 +1196,23 @@ function dotted() {
 
 }
 
-$('#myModal3').on('show.bs.modal', function (e) {
-    modalBodyHeight ();
-});
 
 
-function modalBodyHeight () {
-    var mH = $('.modal-dialog--lg .modal-header').outerHeight(true);
-    var mF = $('.modal-dialog--lg .save').outerHeight(true);
-    var mLg = $('.modal-dialog--lg').outerHeight(true);
-    var mCt = mLg - mF - mH;
+
+function modalBodyHeight() {
+    var mH = $('#myModal3 .modal-header').outerHeight(true);
+    var mF = $('#myModal3 .save').outerHeight(true);
+    var mLg = $('#myModal3 .modal-dialog--lg').outerHeight(true);
+    var cH = $('#myModal3 .container-fluid').outerHeight(true);
+    var mCt = mLg - mF - mH - cH;
     console.log(mH);
     console.log(mF);
+    console.log(mLg);
     console.log(mCt);
     /*$('.modal-dialog--lg .table-overflow').css('max-height', mCt);*/
-
+    $('.table-overflow').css('max-height', mCt);
     $('.table-overflow').slimScroll({
-        height: '370'
+        height: mCt
     });
+
 }

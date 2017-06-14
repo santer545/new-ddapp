@@ -2052,7 +2052,7 @@ div.ui-selected {
 }
 
 .table-overflow {
-    max-height: 370px;
+    
     overflow-y: auto;
     margin-bottom: 50px;
 }
@@ -2187,6 +2187,16 @@ div.ui-selected {
         -moz-transform: translate(-50%, -50%)!important;
         -o-transform: translate(-50%, -50%)!important;
         transform: translate(-50%, -50%)!important;
+        .modal-content {
+            max-height: 100%;    
+        }
+        .save {
+            position: absolute!important; 
+            padding: 15px 0!important;    
+            display: block!important;
+            background-color: #fff; 
+        }
+        /* overflow-y: auto; */
         @media screen and (min-width: 1600px) {
             width: 100%;
             max-width: 1500px;
@@ -2198,12 +2208,15 @@ div.ui-selected {
             -moz-transform: translate(0, -50%)!important;
             -o-transform: translate(0, -50%)!important;
         }
-        @media screen and (max-height: 600px) {
+        @media screen and (max-height: 600px) and (min-width: 1146px) {
             top: 0 !important;
-            -ms-transform: translate(0, 0)!important;
-            -webkit-transform: translate(0, 0)!important;
-            -moz-transform: translate(0, 0)!important;
-            -o-transform: translate(0, 0)!important;
+            -ms-transform: translate(-50%, 0)!important;
+            -webkit-transform: translate(-50%, 0)!important;
+            -moz-transform: translate(-50%, 0)!important;
+            -o-transform: translate(-50%, 0)!important;
+        }
+        .table-overflow {
+            margin-bottom: 0;
         }
     }
     .save {
