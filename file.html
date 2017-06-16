@@ -410,9 +410,14 @@
                 <p class="heading-h2">Добавление файла</p>
                 <div class="equipment__holder">
                     <div class="container-fluid">
+                        
                         <div class="row">
                             <div class="col-md-9">
                                 <form id="form" action="" class="form-horizontal form-horizontal--sm">
+                                    <div class="file-upload-wr row">
+                                        
+                                        <input id="input-4" name="input4[]" type="file" class="file-loading">
+                                    </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
                                             <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Название</label>
@@ -431,7 +436,7 @@
                                     </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
-                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label">Область</label>
+                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Область</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9 full__width">
                                                 <select name="route" id="route" class="selectpicker" multiple>
                                                     <option value="">Все</option>
@@ -442,7 +447,7 @@
                                     </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
-                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label">Тип отдела продаж</label>
+                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Тип отдела продаж</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9 full__width">
                                                 <select name="route" id="route" class="selectpicker" multiple>
                                                     <option value="">Харьковский</option>
@@ -454,7 +459,7 @@
                                     </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
-                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label">Отдел продаж</label>
+                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Отдел продаж</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9 full__width">
                                                 <select name="route" id="route" class="selectpicker" multiple>
                                                     <option value="">Пухляр А.А.</option>
@@ -468,7 +473,7 @@
                                     </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
-                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label">Тип маршрута</label>
+                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Тип маршрута</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9 full__width">
                                                 <select name="route" id="route" class="selectpicker" multiple>
                                                     <option value="">Все</option>
@@ -479,7 +484,7 @@
                                     </div>
                                     <div class="form-group form-group--sm">
                                         <div class="row">
-                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label">Маршрут</label>
+                                            <label for="codtt" class="col-md-3 col-sm-3 col-xs-3 control-label control-label--sm">Маршрут</label>
                                             <div class="col-md-9 col-sm-9 col-xs-9 full__width">
                                                 <select name="route" id="route" class="selectpicker" multiple>
                                                     <option value="">Все</option>
@@ -488,9 +493,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
-                                    
                                 </form>
                             </div>
                         </div>
@@ -502,6 +504,7 @@
             </div>
         </main>
     </div>
+    <div id="file" style="display: none;"></div>
     <script src="js/jquery-2.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/moment.js"></script>
@@ -515,7 +518,8 @@
     <script src="js/jquery.sameheight.js"></script>
     <script src="js/jquery.custom-file-input.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
-
+    <script src="js/fileinput.min.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

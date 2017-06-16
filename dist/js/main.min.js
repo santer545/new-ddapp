@@ -43,6 +43,97 @@ $(document).ready(function() {
 
 
 
+    // initialize with defaults
+    $("#input-4").fileinput({
+        showCaption: false,
+        fileSizeGetter: true,
+        showUpload: false,
+        browseLabel: 'Загрузить файл',
+        showRemove: false,
+        layoutTemplates: {
+            btnBrowse: '<div class="col-md-3 col-md-pull-9"><div tabindex="500" class="{css}"{status}><img src="assets/png/upload.png">{label}</div></div>',
+            main1: '{preview}\n' +
+                
+                '<div class="input-group {class}">\n' +
+                '   {caption}\n' +
+                '   <div class="input-group-btn">\n' +
+                '       {remove}\n' +
+                '       {cancel}\n' +
+                '       {upload}\n' +
+                '       {browse}\n' +
+                '   </div>\n' +
+                '</div>',
+            main2: '{preview}\n<div class="kv-upload-progress hidden"></div>\n{remove}\n{cancel}\n{upload}\n{browse}\n',
+
+            preview: '<div class="col-md-9 col-md-push-3"><div class="file-preview {class}">\n' +
+                '    {close}\n' +
+                '    <div class="close fileinput-remove">×</div>\n' +
+                '    <div class="{dropClass}">\n' +
+                '    <div class="file-preview-thumbnails">\n' +
+                '    </div>\n' +
+                '    <div class="clearfix"></div><div class="meter orange nostripes"><span style="width: 100%"></span></div>' +
+                '    <div class="file-preview-status text-center text-success"></div>\n' +
+                '    <div class="kv-fileinput-error"></div>\n' +
+                '    </div>\n' +
+                '</div></div>',
+            
+            icon: '<span class="glyphicon glyphicon-file kv-caption-icon"></span>',
+            caption: '<div tabindex="-1" class="form-control file-caption {class}">\n' +
+                '   <div class="file-caption-name"></div>\n' +
+                '</div>',
+            btnDefault: '<button type="{type}" tabindex="500" title="{title}" class="{css}"{status}>{icon}{label}</button>',
+            btnLink: '<a href="{href}" tabindex="500" title="{title}" class="{css}"{status}>{icon}{label}</a>',
+
+            modalMain: '<div id="kvFileinputModal" class="file-zoom-dialog modal fade" tabindex="-1" aria-labelledby="kvFileinputModalLabel"></div>',
+            modal: '<div class="modal-dialog modal-lg{rtl}" role="document">\n' +
+                '  <div class="modal-content">\n' +
+                '    <div class="modal-header">\n' +
+                '      <div class="kv-zoom-actions pull-right">{toggleheader}{fullscreen}{borderless}{close}</div>\n' +
+                '      <h3 class="modal-title">{heading} <small><span class="kv-zoom-title"></span></small></h3>\n' +
+                '    </div>\n' +
+                '    <div class="modal-body">\n' +
+                '      <div class="floating-buttons"></div>\n' +
+                '      <div class="kv-zoom-body file-zoom-content"></div>\n' + '{prev} {next}\n' +
+                '    </div>\n' +
+                '  </div>\n' +
+                '</div>\n',
+
+            footer: '<div class="file-thumbnail-footer">\n' +
+                '    <div class="file-caption-name" style="width:{width}"><img src="assets/png/play@2x.png">{caption}<br> {size}</div>\n' +
+                '    {progress} {actions}\n' +
+                '</div>',
+
+            actions: '<div class="file-actions hidden">\n' +
+                '    <div class="file-footer-buttons">\n' +
+                '        {upload} {delete} {zoom} {other}' +
+                '    </div>\n' +
+                '    {drag}\n' +
+                '    <div class="file-upload-indicator" title="{indicatorTitle}">{indicator}</div>\n' +
+                '    <div class="clearfix"></div>\n' +
+                '</div>',
+            actionDelete: '<button type="button" class="kv-file-remove {removeClass}" title="{removeTitle}"{dataUrl}{dataKey}>{removeIcon}</button>\n',
+            actionUpload: '<button type="button" class="kv-file-upload {uploadClass}" title="{uploadTitle}">{uploadIcon}</button>\n',
+            actionZoom: '<button type="button" class="kv-file-zoom {zoomClass}" title="{zoomTitle}">{zoomIcon}</button>',
+            actionDrag: '<span class="file-drag-handle {dragClass}" title="{dragTitle}">{dragIcon}</span>'
+
+        }
+    }).on('fileselect', function(event, numFiles, label) {
+        console.log("fileselect");
+        $('.meter').css('opacity', '0');
+        setTimeout(function() {
+            $(".meter").css('opacity', '1');
+            $(".meter > span").each(function() {
+                $(this)
+                    .data("origWidth", $(this).width())
+                    .width(0)
+                    .animate({
+                        width: $(this).data("origWidth")
+                    }, 1200);
+            });
+        }, 500);
+
+    });;
+
     $('#myModal3').on('shown.bs.modal', function(e) {
         modalBodyHeight();
     });
@@ -309,10 +400,10 @@ function modalHeight() {
     var h = $(window).height();
     var hDifference = $(window).height() - 200;
     var hSmall = $(window).height();
-    
+
     if (hSmall < 800) {
         $('#myModal3').find('.modal-dialog--lg').height(578);
-        
+
 
     } else if (hSmall < 601) {
         $('#myModal3').find('.modal-dialog--lg').css({ 'top': '0!important' });
