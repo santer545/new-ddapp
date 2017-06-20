@@ -50,6 +50,7 @@ $(document).ready(function() {
         showUpload: false,
         browseLabel: 'Загрузить файл',
         showRemove: false,
+        msgLoading: 'Загрузка файла',
         layoutTemplates: {
             btnBrowse: '<div class="col-md-3 col-md-pull-9"><div tabindex="500" class="{css}"{status}><img src="assets/png/upload.png">{label}</div></div>',
             main1: '{preview}\n' +
@@ -1307,3 +1308,88 @@ function modalBodyHeight() {
     });
 
 }
+
+
+
+$.contextMenuCommon({
+  selector: '#trigger',
+  items: {
+
+    folder: {
+      label: 'Создать папку',
+    },
+    download: {
+      label: 'Загрузить файл',
+    },
+
+    sort: {
+      label: 'Сортировать по',
+      items: {
+        size1: {
+          label: 'Наименованию',
+          type: 'radio'
+        },
+        size2: {
+          label: 'Дате выгрузки',
+          type: 'radio'
+        },
+        size3: {
+          label: 'По типу',
+          type: 'radio'
+        }
+      }
+    }
+
+  }
+});
+
+var x = $('body').find('.context-menu-list').find('.context-menu-item').find('span').text();
+console.log(x);
+if(x == "Создать папку") {
+    $(x).closest('.context-menu-list').addClass('asdasdasd');
+    console.log(x);
+}
+
+
+
+
+$.contextMenuCommon({
+  selector: '.js-folder-img img',
+  items: {
+
+    rename: {
+      label: 'Переименовать',
+    },
+    edit: {
+      label: 'Редактировать',
+    },
+    delete: {
+      label: 'Удалить',
+    }
+  }
+});
+
+
+$.contextMenuCommon({
+  selector: '.js-file-menu',
+  items: {
+    view: {
+      label: 'Просмотр',
+    },
+    download: {
+      label: 'Скачать',
+    },
+    rename: {
+      label: 'Переименовать',
+    },
+    edit: {
+      label: 'Редактировать',
+    },
+    delete: {
+      label: 'Удалить',
+    }
+  }
+});
+
+
+

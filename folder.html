@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Хранилище документов</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800&amp;subset=cyrillic" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/jquery.contextMenu.min.css">
+    <link rel="stylesheet" href="css/jquery.contextMenuCommon.min.css"> -->
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -399,16 +401,16 @@
                 <li><a href="">папка 1</a></li>
                 <li><a href="">папка 1.1</a></li>
             </ul>
-            <section class="folder" id="context-menu-target">
+            <section class="folder" id="trigger">
                 <p class="heading-h2">Папка 34</p>
                 <div class="folder-list">
                     <div class="folder-item text-center">
-                        <a role="button" data-toggle="modal" data-target="#myModal2">
+                        <button type="button" data-toggle="modal" data-target="#myModal2">
                             <figure class="folder-img">
                                 <img src="assets/png/invalid-name@2x.png" alt="">
                             </figure>
                             <div class="folder-name folder-name--create">Создать папку</div>
-                        </a>
+                        </button>
                     </div>
                     <div class="folder-item text-center">
                         <figure class="folder-img js-folder-img">
@@ -562,130 +564,12 @@
     <script src="js/jquery.sameheight.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jquery.slimscroll.min.js"></script>
-    <script src="js/ax5core.min.js"></script>
-    <script src="js/ax5menu.min.js"></script>
+    <script src="js/fileinput.min.js"></script>
+    <script src="js/jquery-ui-position.min.js"></script>
+    <script src="js/jquery.contextMenu.min.js"></script>
+    <script src="js/jquery.contextMenuCommon.js"></script>
     <script src="js/main.js"></script>
-    <script type="text/javascript">
-    var menu;
-    var menu1;
-    var menu2;
-    $(document.body).ready(function() {
-        menu = new ax5.ui.menu({
-            position: "absolute", // default position is "fixed"
-            icons: {
-                'arrow': '▸'
-            },
-            items: [{
-                label: "Переименовать",
-
-            }, {
-                label: "Редактировать",
-
-            }, {
-                label: "Удалить",
-            }]
-        });
-        
-        $(".js-folder-img img").bind("contextmenu", function(e) {
-            menu.popup(e);
-            ax5.util.stopEvent(e);
-            // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
-        });
-        menu.onLoad = function() {
-            menu1.close();
-            menu2.close();
-        };
-    });
     
-    
-    $(document.body).ready(function() {
-        menu1 = new ax5.ui.menu({
-            position: "absolute", // default position is "fixed"
-            onClick: function() {
-                // console.log(this);
-            },
-            icons: {
-                'arrow': ''
-            },
-            items: [{
-                label: "Создать папку",
-            }, {
-                label: "Загрузить файл",
-            }, {
-                label: "Сортировать по",
-                items: [{
-                    check: {
-                        type: 'radio',
-                        name: 'radioName',
-                        value: '1',
-                        checked: false
-                    },
-                    label: "Наименованию",
-                }, {
-                    check: {
-                        type: 'radio',
-                        name: 'radioName',
-                        value: '2',
-                        checked: true
-                    },
-                    label: "Дате загрузки"
-                }, {
-                    check: {
-                        type: 'radio',
-                        name: 'radioName',
-                        value: '3',
-                        checked: false
-                    },
-                    label: "Типу"
-                }]
-            }]
-        });
-        
-        menu1.onLoad = function() {
-            menu.close();
-            menu2.close();
-        };
-        $("#context-menu-target").bind("contextmenu", function(e) {
-            menu1.popup(e);
-            ax5.util.stopEvent(e);
-            // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
-        });
-    });
-    
-    
-    $(document.body).ready(function() {
-        menu2 = new ax5.ui.menu({
-            position: "absolute", // default position is "fixed"
-            icons: {
-                'arrow': ''
-            },
-            items: [{
-                label: "Просмотр",
-            }, {
-                label: "Скачать",
-            }, {
-                label: "Переименовать",
-
-            }, {
-                label: "Редактировать",
-
-            }, {
-                label: "Удалить",
-
-            }]
-        });
-       
-        menu2.onLoad = function() {
-            menu.close();
-            menu1.close();
-        };
-        $(".js-file-menu").bind("contextmenu", function(e) {
-            menu2.popup(e);
-            ax5.util.stopEvent(e);
-            // e || {left: 'Number', top: 'Number', direction: '', width: 'Number'}
-        });
-    });
-    </script>
 </body>
 
 </html>
